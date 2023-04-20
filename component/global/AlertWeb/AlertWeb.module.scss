@@ -1,0 +1,37 @@
+@import "src/base/variables";
+@import "src/base/media-queries";
+
+.primary {
+    background-color: $orange;
+}
+
+.secondary {
+    background-color: $sangria;
+}
+
+.alertweb {
+    padding: 0 36px 0 15px;
+    @include min1000p {
+        padding: 0 15px;
+    }
+    &__title {
+        color: $white;
+        font-size: 1.2rem;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        white-space: nowrap;
+        padding: 10px 0;
+        display: block;
+        @include min1000p {
+            font-size: 1.4rem;
+        }
+    }
+    &__twinkle {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin-right: 8px;
+        border-radius: 50%;
+        background-color: currentColor;
+    }
+}

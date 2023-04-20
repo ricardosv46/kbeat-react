@@ -1,0 +1,41 @@
+.content__input {
+    // display: none;
+    position: relative;
+    input {
+        width: 100%;
+        padding-right: 12rem;
+        padding-left: 6rem;
+        height: 60px;
+        background-color: #f4f4f4;
+        font-size: 1.8rem;
+        color: #808080;
+        border: 0;
+        outline: none;
+    }
+    button {
+        position: absolute;
+        top: 1rem;
+        right: 1.6rem;
+        width: 100px;
+        border: none;
+        height: 40px;
+        border-radius: 4px;
+        background-color: #535353;
+        color: #ffffff;
+        font-size: 1.8rem;
+        font-family: "Roboto";
+        cursor: pointer;
+        transition: 0.3s opacity ease-out;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    span {
+        position: absolute;
+        top: 2rem;
+        left: 1.6rem;
+    }
+    @media (min-width: 1024px) {
+        display: block;
+    }
+}

@@ -1,0 +1,22 @@
+$break-desktopLR: 1000px;
+$break-tablet: 768px;
+$break-600: 600px;
+
+@mixin min600p {
+    @media (min-width: #{$break-600}) {
+        @content;
+    }
+}
+
+@mixin min768p {
+    @media (min-width: #{$break-tablet}) {
+        @content;
+    }
+}
+
+@mixin min1000p {
+    @media (min-width: #{$break-desktopLR}) {
+        @content;
+    }
+}
+

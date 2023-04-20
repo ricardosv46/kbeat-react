@@ -1,0 +1,23 @@
+@import 'src/base/variables';
+.authorSign {
+    display: inline-flex;
+    padding: 5px 0;
+    position: relative;
+}
+.authorSign__image {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+}
+.authorSign__name {
+    font-size: 12px;
+    font-weight: 600;
+    color: $granite-gray;
+}
+
+.left{
+    margin-left: 8px;
+    margin-top: 3px;
+
+
+}

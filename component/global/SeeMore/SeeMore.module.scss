@@ -1,0 +1,17 @@
+@import 'src/base/variables';
+
+.seeMore {
+    font-family: "Roboto", sans-serif;
+    border-left: 2px solid #000;
+    color: #000;
+    padding-left: 16px;
+    margin-left: 16px;
+    text-transform: uppercase;
+    min-width: 62px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    font-variant: all-small-caps;
+}

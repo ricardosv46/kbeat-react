@@ -1,0 +1,28 @@
+@import 'src/base/variables';
+@import 'src/base/media-queries';
+
+.close-button {
+    &__container {
+        position: relative;
+        margin-bottom: 3px;
+    }
+    &__icon {
+        position: absolute;
+        right: 16px;
+        background-color: $transparent;
+        border: none;
+        color: $white;
+        cursor: pointer;
+        &:hover {
+            opacity: .8;
+        }
+    }
+}
+
+.top-right {
+    top: 16px;
+}
+.top-right-center {
+    top: 50%;
+    transform: translateY(-50%);
+}

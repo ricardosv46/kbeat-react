@@ -1,0 +1,36 @@
+@import 'src/base/variables';
+@import "src/base/media-queries";
+
+.item-social {
+    width: 35px;
+    padding: 0;
+    height: 35px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 26px;
+    border-radius: 4px;
+}
+
+.primary {
+    background-color: $medium-gray;
+    color: $white;
+}
+
+.label {
+    width: auto;
+    padding: 0 8px;
+    font-weight: 700;
+    font-size: 0;
+    background-color: $medium-gray;
+    color: $white;
+    @include min768p {
+        column-gap: 8px;
+        font-size: 1rem;
+        line-height: 1.2;
+        text-align: center;
+        background-color: $white;
+        color: $medium-gray;
+    }
+}

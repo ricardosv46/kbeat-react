@@ -1,0 +1,59 @@
+@import 'src/base/variables';
+@import "src/base/media-queries";
+
+.inlive-badge {
+    line-height: 0;
+    color: $white;
+    background-color: $torch-red;
+    font-weight: 700;
+    column-gap: 7px;
+    border-radius: 15px;
+    white-space: nowrap;
+}
+
+.small,
+.large,
+.medium {
+    font-size: 1rem;
+    padding: 7px 14px 7px 8px;
+}
+
+.small {
+    padding: 6px 9px 6px 7px;
+    column-gap: 5px;
+
+    & svg {
+        width: 19px;
+        height: 13px;
+    }
+}
+
+.large {
+    @include min768p {
+        font-size: 1.4rem;
+        border-radius: 25px;
+    }
+    & svg {
+        @include min768p {
+            width: 29px;
+            height: 23px;
+        }
+    }
+}
+
+.stream {
+    font-size: .8rem;
+    padding: 4px 10px 4px 4px;
+    @include min600p {
+        font-size: 1rem;
+        padding: 7px 14px 7px 8px;
+    }
+    & svg {
+        width: 13px;
+        height: 9px;
+        @include min600p {
+            width: 21px;
+            height: 15px;
+        }
+    }
+}

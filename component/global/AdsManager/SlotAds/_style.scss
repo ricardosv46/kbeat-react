@@ -1,0 +1,190 @@
+/* Agregar contenedor para publicidades superiores */
+.bl-Ads {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+    &--fixed {
+        .ads_Lateral_Left,
+        .ads_Lateral_Right {
+            position: fixed;
+        }
+    }
+    &--headerFixed {
+        .ads_Lateral_Left,
+        .ads_Lateral_Right {
+            top: 58px;
+        }
+    }
+}
+/*Espacios grises en ads*/
+.ad-container {
+    display: none;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+    z-index: 1;
+}
+
+.ads_Middle2-container,
+.ads_inline2-container,
+.ads_Middle-container,
+.ads_Strip-container,
+.ads_inline3-container,
+.ads_Middle2_Right-container,
+.ads_inline-container,
+.ads_webhome_inline-container,
+.ads_Billboard-container,
+.ads_webhome_inline2-container,
+.ads_webhome_inline3-container,
+.ads_webhome_inline4-container,
+.ads_webhome_inline5-container,
+.ads_webhome_inline6-container,
+.ads_webhome_inline7-container,
+.ads_webhome_inline8-container,
+.ads_Live5-container,
+.ads_Live4-container,
+.ads_Live3-container,
+.ads_Live2-container,
+.ads_Live1-container,
+.ads_Galeria1-container,
+.ads_Galeria2-container,
+.ads_Galeria3-container,
+.ads_Galeria4-container,
+.ads_Galeria5-container,
+.ads_Galeria6-container,
+.ads_Galeria7-container {
+    background-color: #eee;
+    padding-top: 30px;
+    position: relative;
+    box-sizing: content-box !important;
+    &::before {
+        font-size: 10px;
+        font-family: "Roboto", sans-serif;
+        content: "PUBLICIDAD";
+        color: #333;
+        background: #eee;
+        font-weight: 400;
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        @media screen and (max-width: 720px) {
+            width: 100vw;
+            left: -50vw;
+            margin-left: 50%;
+        }
+    }
+    &::after {
+        @media screen and (max-width: 720px) {
+            background-color: #eee;
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100vw;
+            left: -50vw;
+            margin-left: 50%;
+            height: 100%;
+            z-index: -2;
+        }
+    }
+}
+
+.ads_Galeria1-container,
+.ads_Galeria2-container,
+.ads_Galeria3-container,
+.ads_Galeria4-container,
+.ads_Galeria5-container,
+.ads_Galeria6-container,
+.ads_Galeria7-container {
+    @media screen and (max-width: 720px) {
+        max-width: 100%;
+        overflow: hidden;
+    }
+}
+.atm-banner-videoinread3{
+    text-align: center;
+}
+.ads_Top-container {
+    background: #fff;
+    margin-bottom: 0;
+}
+.ads_Middle-container,
+.ads_Middle2_Right-container,
+.ads_Strip-container {
+    margin-top: 10px;
+}
+.ads_Down-container {
+    height: 250px;
+    max-width: 985px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+}
+.ads_Middle-container,
+.ads_Middle2_Right-container {
+    height: 600px;
+}
+.ads_Sticky-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+    z-index: 999;
+    padding-bottom: 0;
+}
+
+.ads_Lateral_Left {
+    // height: 600px;
+    left: 50%;
+    margin-left: -660px;
+    text-align: center;
+    top: 0;
+    position: absolute;
+    z-index: 2; //9999
+    // width: 160px;
+}
+
+.ads_Lateral_Right {
+    // height: 600px;
+    margin-right: -660px;
+    text-align: center;
+    position: absolute;
+    right: 50%;
+    z-index: 2; //9999
+    // width: 160px;
+    top: 0;
+}
+.scrollAdsBanners {
+    position: fixed;
+    top: 67px !important;
+}
+
+.ads_Floating {
+    right: 0;
+    position: fixed;
+    bottom: 0;
+    z-index: 4;
+}
+
+#Videoinread2 {
+    position: absolute;
+}
+@media screen and (max-width: 768px) {
+    aside.ads_inline-container{
+        overflow: visible;
+        position: relative;
+        align-items: flex-start;
+        min-height: 500px;
+    }
+    #inline {
+        position: sticky;
+        top: 180px;
+        bottom: 0;
+    }
+}
