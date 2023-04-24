@@ -1,0 +1,118 @@
+import DegradedCard from '../degradedCard/DegradedCard';
+import SectionCard from '../sectionCard/SectionCard';
+import styles from '../sectionGridDoubleTypeSmall/SectionGridDoubleTypeSmall.module.scss';
+import SmallCard from '../smallCard/SmallCard';
+
+const SectionGridDoubleTypeSmall = ({
+  dataPrimary,
+  sectionTitlePrimary,
+  linkToPrimary = '#',
+  dataSecondary,
+  sectionTitleSecondary,
+  linkToSecondary,
+}) => {
+  let dataDefaultPrimary = [];
+  let dataMainPrimary = {};
+  let listItemPrimary;
+  let listItemSecondary;
+  let dataMainSecondary = [];
+  if (dataPrimary?.articles?.data && dataPrimary?.articles?.data?.length > 0) {
+    dataDefaultPrimary = dataPrimary?.articles?.data;
+  }
+
+  if (dataDefaultPrimary.length > 0) {
+    dataMainPrimary = dataDefaultPrimary.slice(0, 1)[0];
+    let srcImage = dataMainPrimary?.data?.multimedia.find(media => media.type == "image")?.path ||
+      multimedia.find(media => media.type == "video")?.data.image_path || '/static/images/placeholder.png';
+    listItemPrimary = (
+      <div className={`${styles['listItem__container']}`}>
+        <div className={`${styles['listItem__container-primaryCard']}`}>
+          <DegradedCard
+            urlNote={dataMainPrimary?.slug}
+            altImg={dataMainPrimary?.data?.multimedia[0]?.data?.title}
+            urlImg={srcImage}
+            title={dataMainPrimary?.title}
+            width={300}
+            height={245}
+          />
+        </div>
+
+        <div className={`${styles['listItem__container-secondaryCard']}`}>
+          {dataDefaultPrimary.slice(1, 9).map((item, index) => {
+            const title = item?.title ?? '';
+            const imgUrl = item?.data?.multimedia.find(media => media.type == "image")?.path ||
+              item?.data?.multimedia.find(media => media.type == "video")?.data.image_path ||
+              "/static/images/placeholder.png";
+            const urlNote = item?.slug ?? '';
+            return (
+              <SmallCard
+                key={`${index}-${title}`}
+                urlImg={imgUrl}
+                title={title}
+                urlNote={urlNote}
+              />
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
+  if (dataSecondary && dataSecondary.articles && dataSecondary?.articles?.data.length > 0) {
+    dataMainSecondary = dataSecondary?.articles?.data
+    listItemSecondary = (
+      <div className={`${styles['listItem__secondaryData']}`}>
+        {dataMainSecondary.map((item, index) => {
+          const title = item?.title ?? '';
+          const urlNote = item?.slug ?? '';
+          const category = item?.data?.categories.find(cat => cat.primary === true)?.name
+          return (
+            <article className={styles["secondary__article"]}>
+              <a className={`${styles["secondary__title--anchor"]} extend-link`} href={urlNote}>
+                <h2 className={styles["secondary__title"]}>{title}</h2>
+              </a>
+              <span className={styles["secondary__category"]}>{category}</span>
+            </article>
+          );
+        })}
+      </div>
+    );
+  }
+
+  return (
+    <div className={`${styles['container__sectionGrid']}`}>
+      <div className={`${styles['container__sectionGridPrimary']}`}>
+        <div className={`${styles['sectionGrid__head']}`}>
+          <h3 className={`${styles['sectionGrid__head__title']}`}>
+            {sectionTitlePrimary}
+          </h3>
+          <p className={`${styles['sectionGrid__head__separator']}`}></p>
+          <a
+            href={linkToPrimary}
+            className={`${styles['sectionGrid__head__linkTo']} extend-link`}
+          >
+            VER MÁS
+          </a>
+        </div>
+        {listItemPrimary}
+      </div>
+      <div className={`${styles['container__sectionGridSecondary']}`}>
+        <div className={`${styles['sectionGrid__head']}`}>
+          <h3 className={`${styles['sectionGrid__head__title']}`}>
+            {sectionTitleSecondary}
+          </h3>
+          <p className={`${styles['sectionGrid__head__separator']}`}></p>
+          <a
+            href={linkToSecondary}
+            className={`${styles['sectionGrid__head__linkTo']} extend-link`}
+          >
+            VER MÁS
+          </a>
+        </div>
+        {listItemSecondary}
+      </div>
+    </div>
+  );
+};
+
+export default SectionGridDoubleTypeSmall;

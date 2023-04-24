@@ -1,10 +1,11 @@
 import { Layout } from "Layouts/Layouts";
+import SectionGrid from "component/page_home/sectionGrid/SectionGrid";
 import WithHome from "hocs/withHome";
 
 const Home = (props) => {
-    const {metaSite} = props;
-    console.log({props})
-    
+    const { metaSite, newsSociety } = props;
+
+
     return (
         <Layout
             data={metaSite}
@@ -15,7 +16,13 @@ const Home = (props) => {
             prebid={"HOME"}
             adsPage={{}}
             listNote={{}}
-        >hgello</Layout>
+        >
+
+
+            <SectionGrid data={newsSociety} sectionTitle="K-DRAMAS" linkTo="" />
+
+
+        </Layout>
     );
 };
 
