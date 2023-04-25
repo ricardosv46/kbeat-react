@@ -1,0 +1,52 @@
+.mediumCard__container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.mediumCard__title {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mediumCard__image {
+  display: block;
+  width: 100%;
+  height: 92px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.hidden {
+  display: none;
+}
+.mediumCard__section {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 16px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 4px;
+}
+.mediumCard__title--anchor {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+}
+
+@media (min-width: 769px) {
+  .mediumCard__image {
+    height: 119px;
+  }
+}

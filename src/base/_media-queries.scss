@@ -3,20 +3,39 @@ $break-tablet: 768px;
 $break-600: 600px;
 
 @mixin min600p {
-    @media (min-width: #{$break-600}) {
-        @content;
-    }
+  @media (min-width: #{$break-600}) {
+    @content;
+  }
 }
 
 @mixin min768p {
-    @media (min-width: #{$break-tablet}) {
-        @content;
-    }
+  @media (min-width: #{$break-tablet}) {
+    @content;
+  }
 }
 
 @mixin min1000p {
-    @media (min-width: #{$break-desktopLR}) {
-        @content;
-    }
+  @media (min-width: #{$break-desktopLR}) {
+    @content;
+  }
 }
 
+//creacion de mapa
+$breakpoints: (
+  //phone
+  sm: 540px,
+  //tablet
+  md: 768px,
+  //desktop
+  lg: 1024px
+);
+
+@mixin media-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and (min-width: map-get($breakpoints,$breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "El valor '#{$breakpoint}' no ha sido declarado como breakpoint.";
+  }
+}

@@ -1,0 +1,53 @@
+.smallCard__container {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+.smallCard__title {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.smallCard__image {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.hidden {
+  display: none;
+}
+.smallCard__section {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 16px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.smallCard__title--anchor {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+}
+@media (min-width: 769px) {
+  .smallCard__image {
+    width: 73px;
+    height: 50px;
+  }
+  .smallCard__title {
+    line-height: 18px;
+  }
+}

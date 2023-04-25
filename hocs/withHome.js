@@ -8,11 +8,32 @@ const WithHome = (WrapperComponent) => {
     hocComponent.getInitialProps = async ({ query, asPath }) => {
         
         const metaSite = await fetchApi("meta", {});
+         
+        const newsSociety = await fetchApi("articles", {
+            category_slug: "sociedad",
+            limit: 9,
+            view: "home",
+        });
+        const newsWorld = await fetchApi("articles", {
+            category_slug: "mundo",
+            limit: 5,
+            view: "home",
+        });
+        const newsSports = await fetchApi("articles", {
+            category_slug: "deportes",
+            limit: 4,
+            view: "home",
+        });
        
+
+
         const typePage = "home";
         return {
             typePage,
             metaSite,
+            newsSociety,
+            newsWorld,
+            newsSports
         };
     };
 

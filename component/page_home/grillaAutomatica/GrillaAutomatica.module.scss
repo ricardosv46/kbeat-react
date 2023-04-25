@@ -1,0 +1,50 @@
+.container__sectionGrid{
+    margin: 24px 0;
+}
+.listItem__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 15px;
+}
+.sectionGrid__head {
+  display: flex;
+  align-items: flex-end;
+  margin: 0;
+  gap: 8px;
+  border-bottom: 2px solid #1aba95;
+  border-top: 1px solid #F0F0F0;;
+  padding-bottom: 9px;
+  padding-top: 8px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.sectionGrid__head__title {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.6rem;
+  color: #000;
+  margin: 0;
+}
+.sectionGrid__head__linkTo {
+  display: block;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-variant: all-small-caps;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: #1aba95;
+  margin: 0;
+}
+.sectionGrid__head__separator {
+  background-color: #1aba95;
+  height: 18px;
+  width: 2px;
+  display: block;
+  margin: 0;
+}
+@media (min-width: 769px) {
+  .listItem__container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
