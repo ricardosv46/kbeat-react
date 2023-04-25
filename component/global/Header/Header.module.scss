@@ -1,0 +1,224 @@
+@import "src/base/variables";
+
+.bar {
+    background: #EAEAEA;
+}
+.loader {
+    height:4px;
+    transition:width 0.3s ease; 
+    margin-top: 0px;
+    background:#707070;
+}
+.container__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    margin: auto;
+    height: 100%;
+}
+.logo-header-kbeat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-header-search{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.container-btn-main-menu {
+    display: flex;
+    gap:16px;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 0 0 2px;
+}
+.btn-sandwich {
+    width: 28px;
+    height: 27px;
+    border: none;
+    background-color: $transparent;
+    font-size: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-sandwich_span {
+    display: block;
+    position: absolute;
+    border-radius: 16px;
+    height: 3px;
+    width: 52%;
+    background: #fff;
+    left: 6px;
+}
+.container-color {
+    padding: 10px 15px;
+}
+.logo-kbeat {
+    width: 177px;
+    height: 59px;
+}
+.container-header_menu-secciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 13.5px 16px;
+    border-bottom: 1px solid #C4C4C4;
+}
+.container-header_menu-secciones-link {
+    color: $medium-gray;
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+}
+.container-header_menu-secciones-item {
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+}
+.container-header_menu-secciones-link:hover {
+    text-decoration: none;
+    color: #000;
+}
+.container-header__menu {
+    position: absolute;
+    top: 118px;
+    width: 100%;
+    z-index: 999;
+}
+.container-header__mainMenu {
+    position: absolute;
+    top: 118px;
+    z-index: 999;
+    overflow-y: scroll;
+    max-width: 330px;
+}
+.container-header__mainMenu::-webkit-scrollbar {
+    width: 7px;
+}
+.container-header__mainMenu::-webkit-scrollbar-track {
+    background: #333;
+}
+.container-header__mainMenu::-webkit-scrollbar-thumb {
+    background-color: #545455;
+}
+.container-header__menu-bg-gray {
+    max-width: 330px;
+    max-height: 100vh;
+    position: absolute;
+    right: 46px;
+    z-index: 9999999 !important;
+}
+.container {
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        max-width: 1000px;
+    }
+    .general__header {
+        min-height: 110px;
+    }
+}
+.container_subMenuHeader.activeMenuDropdown {
+    display: block !important;
+    max-width: 1000px;
+    width: 100%;
+    position: relative;
+}
+@media (min-width: 540px) {
+    .container-btn-main-menu {
+        margin: 0 0 0 4px;
+    }
+    .btn-sandwich {
+        width: 38px;
+        height: 38px;
+    }
+}
+@media (min-width: 540px) and (max-width: 999px) {
+    .container-color {
+        height: 80px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .container-header__mainMenu {
+        left: 22.5%;
+    }
+    .btn-sandwich {
+        display: inline-block;
+    }
+    .block-menu {
+        display: inline-block;
+        width: 25%;
+        vertical-align: top;
+        padding: 0;
+    }
+    .container-color {
+        height: 80px;
+        padding-left: 6px;
+        padding-right: 18px;
+    }
+    .hidden {
+        display: none;
+    }
+}
+@media (max-width: 999px) {
+    .box-header {
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 999;
+        position: sticky;
+        margin-bottom: 5px;
+    }
+}
+.btn-sandwich_span:first-child {
+    top: 6px;
+    width: 24px;
+}
+.btn-sandwich_span:nth-child(2) {
+    top: 13px;
+    width: 24px;
+}
+.btn-sandwich_span:nth-child(3) {
+    top: 20px;
+    width: 24px;
+}
+@media screen and (min-width: 560px) {
+    .btn-sandwich_span:first-child {
+        top: 10px !important;
+        left: 9px !important;
+    }
+    .btn-sandwich_span:nth-child(2) {
+        top: 16px !important;
+        left: 9px !important;
+    }
+    .btn-sandwich_span:nth-child(3) {
+        top: 22px !important;
+        left: 9px !important;
+    }
+}
+
+

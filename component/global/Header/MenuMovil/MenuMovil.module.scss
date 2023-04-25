@@ -1,0 +1,203 @@
+.MenuMovil {
+    right: 100%;
+    top: 80px;
+    bottom: 0;
+    z-index: 9999 !important;
+    opacity: 0;
+    background: #333;
+    transition: opacity 0.2s, right 0.3s;
+    display: none;
+}
+@media (min-width: 538px) and (max-width: 1023px) {
+    .MenuMovil {
+        position: fixed;
+        max-width: 330px;
+    }
+}
+.MenuMovil.menu-mobile__open {
+    right: calc(100% - 330px);
+    width: 100%;
+    opacity: 1;
+    display: block;
+    overflow-x: hidden;
+}
+@media (max-width: 999px) {
+    .MenuMovil.menu-mobile__open {
+        max-width: 330px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100vh;
+    }
+}
+.MenuMovil::-webkit-scrollbar {
+    width: 7px;
+}
+
+.MenuMovil::-webkit-scrollbar-track {
+    background: #333;
+}
+
+.MenuMovil::-webkit-scrollbar-thumb {
+    background-color: #545455;
+}
+
+/*.container-sub-1 {
+    overflow: hidden;
+    width: calc(100% + 17px);
+}*/
+
+.MenuMovil .menu-mobile__main-menu-block {
+    padding: 11.5px 0;
+    width: 100%;
+    display: inline-block;
+}
+.MenuMovil .menu-mobile__main-menu-block ul.menu-mobile__main-menu-block-sections {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-mobile__main-menu-block--item {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 0;
+    vertical-align: middle;
+    font-size: 14px;
+    padding-left: 15px;
+    color: #fff;
+    a {
+        padding: 15px 0;
+        text-decoration: none;
+    }
+}
+
+.menu-mobile__main-menu-block--item a {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    line-height: initial;
+}
+.menu-mobile__main-menu-block--item:hover {
+    background: #000;
+}
+.menu-mobile__main-menu-block--item a:hover {
+    text-decoration: underline;
+}
+.menu-mobile__main-menu-block--item a.item-humor__list:hover {
+    text-decoration: none;
+}
+.MenuMovil .menu-mobile__main-menu-block ul.menu-mobile__main-menu-block-sections li a .menu-sort svg {
+    float: right;
+    right: 9px;
+    top: 9px;
+}
+
+.MenuMovil .menu-mobile__main-menu-block ul.menu-mobile__main-menu-block-sections li ul {
+    position: relative;
+}
+
+.MenuMovil .menu-mobile__main-menu-block ul.menu-mobile__main-menu-block-sections li ul.menu-mobile__main-block-submenu {
+    position: absolute;
+    background: #e5ebee;
+    width: 100%;
+    top: 60px;
+    bottom: 0;
+    right: -100%;
+    z-index: 99;
+    opacity: 0;
+    padding: 0;
+    transition: opacity 0.2s, right 0.3s;
+    transition-timing-function: ease-in-out;
+    overflow-x: hidden;
+}
+
+.MenuMovil .menu-mobile__main-menu-block ul.menu-mobile__main-menu-block-sections li ul.menu-mobile__main-block-submenu li {
+    border-bottom: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 11.5px;
+}
+
+.MenuMovil .menu-mobile__main-menu-block ul.menu-mobile__main-menu-block-sections li ul.menu-mobile__main-block-submenu li i {
+    position: relative;
+}
+
+.MenuMovil
+    .menu-mobile__main-menu-block
+    ul.menu-mobile__main-menu-block-sections
+    li
+    ul.menu-mobile__main-block-submenu
+    li.block-submenu__title {
+    font-size: 20px;
+    position: relative;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #acb1b3;
+}
+
+.MenuMovil
+    .menu-mobile__main-menu-block
+    ul.menu-mobile__main-menu-block-sections
+    li
+    ul.menu-mobile__main-block-submenu
+    li.block-submenu__title
+    span
+    svg {
+    position: absolute;
+    right: 25px;
+    top: 17px;
+}
+
+.MenuMovil
+    .menu-mobile__main-menu-block
+    ul.menu-mobile__main-menu-block-sections
+    li
+    ul.menu-mobile__main-block-submenu.menu-mobile__main-block-submenu-show {
+    right: 0;
+    opacity: 1;
+}
+
+.menu-mobile__search-form {
+    padding: 15px;
+}
+
+.menu-mobile__search-submit {
+    height: 27px;
+    border: none;
+    background: #fff;
+    position: absolute;
+    top: 17px;
+    right: 25px;
+    font-size: 18px;
+}
+
+.menu-mobile__search-input {
+    -webkit-text-fill-color: #525050;
+    caret-color: #525050;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+    height: 36px;
+    padding-left: 9px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.menu-mobile__search-submit {
+    height: 27px;
+    border: none;
+    background: #fff;
+    position: absolute;
+    top: 17px;
+    right: 25px;
+    font-size: 18px;
+    color: #bfbfbf;
+}

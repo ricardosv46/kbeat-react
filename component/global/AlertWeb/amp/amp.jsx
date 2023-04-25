@@ -46,14 +46,6 @@ const AlertaWebAMP = ({ alertWebData = {}, variant = "primary", cssName="" }) =>
                         display: inline-block;
                         font-family: "Roboto", sans-serif
                     }
-                    .blockAlertaWebLink2{
-                            background-color: #940203;
-                            text-decoration: none;
-                    }
-                    .blockAlertaWebLink{
-                            background-color: #fa8306;
-                            text-decoration: none;
-                    }
                     .alertBlock{
                         overflow-x: auto;
                         scroll-behavior: smooth;

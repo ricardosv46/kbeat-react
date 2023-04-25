@@ -1,0 +1,22 @@
+@import "src/base/variables";
+@import "src/base/media-queries";
+
+
+.wrapper-main__ul{
+    display: none;
+    gap: 8px;
+
+    @include min1000p{
+        display: flex;
+    }
+}
+
+.wrapper-main__link{
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: $purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -207,20 +207,20 @@
 }
 
 .container-header {
-    background: #000;
+    background: linear-gradient(270deg, #4695E3 0%, #F200CC 100%);
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
 }
 .container__fixed {
-    background-color: #000;
+    background: linear-gradient(270deg, #4695E3 0%, #F200CC 100%);
     min-width: 100%;
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
     z-index: 999;
-    height: 58px;
+    height: 80px;
 }
 @media (min-width: 1000px) {
     .list__menu {

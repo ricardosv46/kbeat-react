@@ -1,0 +1,117 @@
+.menu-mobile__main-menu-block--item {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 0;
+    vertical-align: middle;
+    font-size: 14px;
+    padding-left: 15px;
+    color: #fff;
+    a {
+        padding: 15px 0;
+        text-decoration: none;
+    }
+}
+.withoutLink {
+    font-family: "Roboto", sans-serif;
+}
+.item-humor__span {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    margin: 12px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    cursor: pointer;
+    right: 7px;
+}
+
+.rotate {
+    transform: rotate(-135deg);
+}
+
+.menu-mobile__main-menu-block--item a {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    line-height: initial;
+}
+
+.menu-mobile__main-menu-block--item:hover {
+    background: #000;
+}
+.menu-mobile__main-menu-block--item a:hover {
+    text-decoration: underline;
+}
+.menu-mobile__main-menu-block--item a.item-humor__list:hover {
+    text-decoration: none;
+}
+.MenuMovil .menu-mobile__main-menu-block ul.menu-mobile__main-menu-block-sections li a .menu-sort svg {
+    float: right;
+    right: 9px;
+    top: 9px;
+}
+
+.MenuMovil .menu-mobile__main-menu-block ul.menu-mobile__main-menu-block-sections li ul {
+    position: relative;
+}
+
+.MenuMovil .menu-mobile__main-menu-block ul.menu-mobile__main-menu-block-sections li ul.menu-mobile__main-block-submenu {
+    position: absolute;
+    background: #e5ebee;
+    width: 100%;
+    top: 60px;
+    bottom: 0;
+    right: -100%;
+    z-index: 99;
+    opacity: 0;
+    padding: 0;
+    transition: opacity 0.2s, right 0.3s;
+    transition-timing-function: ease-in-out;
+    overflow-x: hidden;
+}
+
+.MenuMovil .menu-mobile__main-menu-block ul.menu-mobile__main-menu-block-sections li ul.menu-mobile__main-block-submenu li {
+    border-bottom: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 11.5px;
+}
+
+.MenuMovil .menu-mobile__main-menu-block ul.menu-mobile__main-menu-block-sections li ul.menu-mobile__main-block-submenu li i {
+    position: relative;
+}
+
+.MenuMovil
+    .menu-mobile__main-menu-block
+    ul.menu-mobile__main-menu-block-sections
+    li
+    ul.menu-mobile__main-block-submenu
+    li.block-submenu__title {
+    font-size: 20px;
+    position: relative;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #acb1b3;
+}
+
+.item-humor__span {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    margin: 12px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    cursor: pointer;
+    right: 7px;
+}
+.rotate {
+    transform: rotate(-135deg);
+}

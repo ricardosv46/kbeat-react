@@ -15,6 +15,8 @@ import { ComScore } from "component/global/ComScore";
 import { CookielessTagTeads } from "component/global/CookielessTagTeads";
 import Script from "next/script"
 import { validateGeolocation } from "helpers/seoData/geolocalSections";
+import { Header } from "component/global/Header/Header";
+import { Footer } from "component/global/Footer/Footer";
 
 const newResize = new resizePrototype();
 const Layout = (props) => {
@@ -458,9 +460,18 @@ const Layout = (props) => {
                 internal={internal}
                 type={meta_type}
             /> */}
+            <Header refBtnSearch={refBtnSearch}
+                hideAdTop={hideAdTop}
+                adsPage={adsPage?.ads?.data || []}
+                mainData={dataHeader}
+                topicData={topicMenu}
+                setShowSearch={setShowSearch}
+                showSearch={showSearch}
+                internal={internal}
+                type={meta_type} /> 
             {/* <InputSearch refBtnSearch={refBtnSearch} showSearch={showSearch} /> */}
             <div className={isAmp ? "wrapper__content--amp" : "wrapper__content mh-600"}>{children}</div>
-            {/* <Footer data={dataFooter} /> */}
+            <Footer data={dataFooter} />
             <ComScore />
             <Script strategy="afterInteractive" src="/prebid/prebid.v7.39.js" />
             <Script strategy="afterInteractive" src="/prebid/ads-prebid-update_2023-03.min.js" />
