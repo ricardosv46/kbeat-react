@@ -1,18 +1,17 @@
-import DegradedCard from '../degradedCard/DegradedCard';
-import SectionCard from '../sectionCard/SectionCard';
-import styles from '../sectionGridDouble/SectionGridDouble.module.scss';
-import SmallCard from '../smallCard/SmallCard';
-import PrintEdition from '../../features/homepage/PrintEdition/printEdition';
+import DegradedCard from "../degradedCard/DegradedCard";
+import SectionCard from "../sectionCard/SectionCard";
+import styles from "../sectionGridDouble/SectionGridDouble.module.scss";
+import SmallCard from "../smallCard/SmallCard";
+
 
 const SectionGridDouble = ({
   dataPrimary,
   sectionTitlePrimary,
-  linkToPrimary = '#',
+  linkToPrimary = "#",
   dataSecondary,
   sectionTitleSecondary,
   linkToSecondary,
   isSpotlightSecondaryData = false,
-  isPrinted=false
 }) => {
   let dataDefaultPrimary = [];
   let dataMainPrimary = {};
@@ -25,12 +24,13 @@ const SectionGridDouble = ({
 
   if (dataDefaultPrimary.length > 0) {
     dataMainPrimary = dataDefaultPrimary.slice(0, 1)[0];
-    const urlImg = dataMainPrimary?.data?.multimedia.find(media => media.type == "image")?.path ||
-    dataMainPrimary?.data?.multimedia.find(media => media.type == "video")?.data?.image_path ||
-    "/static/images/placeholder.png";
+    const urlImg =
+      dataMainPrimary?.data?.multimedia.find((media) => media.type == "image")?.path ||
+      dataMainPrimary?.data?.multimedia.find((media) => media.type == "video")?.data?.image_path ||
+      "/static/images/placeholder.png";
     listItemPrimary = (
-      <div className={`${styles['listItem__container']}`}>
-        <div className={`${styles['listItem__container-primaryCard']}`}>
+      <div className={`${styles["listItem__container"]}`}>
+        <div className={`${styles["listItem__container-primaryCard"]}`}>
           <DegradedCard
             urlNote={dataMainPrimary?.slug}
             altImg={dataMainPrimary?.data?.multimedia[0]?.data?.title}
@@ -41,21 +41,15 @@ const SectionGridDouble = ({
           />
         </div>
 
-        <div className={`${styles['listItem__container-secondaryCard']}`}>
+        <div className={`${styles["listItem__container-secondaryCard"]}`}>
           {dataDefaultPrimary.slice(1, 9).map((item, index) => {
-            const title = item?.title ?? '';
-            const imgUrl = item?.data?.multimedia.find(media => media.type == "image")?.path ||
-              item?.data?.multimedia.find(media => media.type == "video")?.data?.image_path ||
-            "/static/images/placeholder.png";
-            const urlNote = item?.slug ?? '';
-            return (
-              <SmallCard
-                key={`${index}-${title}`}
-                urlImg={imgUrl}
-                title={title}
-                urlNote={urlNote}
-              />
-            );
+            const title = item?.title ?? "";
+            const imgUrl =
+              item?.data?.multimedia.find((media) => media.type == "image")?.path ||
+              item?.data?.multimedia.find((media) => media.type == "video")?.data?.image_path ||
+              "/static/images/placeholder.png";
+            const urlNote = item?.slug ?? "";
+            return <SmallCard key={`${index}-${title}`} urlImg={imgUrl} title={title} urlNote={urlNote} />;
           })}
         </div>
       </div>
@@ -79,14 +73,13 @@ const SectionGridDouble = ({
       );
     }
   } else {
-    if (
-      dataSecondary?.articles?.data &&
-      dataSecondary?.articles?.data?.length > 0
-    ) {
+    if (dataSecondary?.articles?.data && dataSecondary?.articles?.data?.length > 0) {
       dataMainSecondary = dataSecondary?.articles?.data[0];
       const isVideo = dataMainSecondary?.data?.multimedia?.some((media) => media.type == "video");
-      const imgUrl = dataMainSecondary?.data?.multimedia?.find(media => media.type == "image")?.path ||
-      dataMainSecondary?.data?.multimedia?.find(media => media.type == "video")?.data?.image_path || '/static/images/placeholder.png'
+      const imgUrl =
+        dataMainSecondary?.data?.multimedia?.find((media) => media.type == "image")?.path ||
+        dataMainSecondary?.data?.multimedia?.find((media) => media.type == "video")?.data?.image_path ||
+        "/static/images/placeholder.png";
       listItemSecondary = (
         <SectionCard
           urlNote={dataMainSecondary?.slug}
@@ -102,30 +95,23 @@ const SectionGridDouble = ({
       );
     }
   }
-  if(isPrinted) {
-    listItemSecondary = <PrintEdition data={dataSecondary} />
-  }
+  // if(isPrinted) {
+  //   listItemSecondary = <PrintEdition data={dataSecondary} />
+  // }
 
   return (
-    <div className={`${styles['container__sectionGrid']}`}>
-      <div className={`${styles['container__sectionGridPrimary']}`}>
-        <div className={`${styles['sectionGrid__head']}`}>
-          <h3 className={`${styles['sectionGrid__head__title']}`}>
-            {sectionTitlePrimary}
-          </h3>
-          <p className={`${styles['sectionGrid__head__separator']}`}>{}</p>
-          <a
-            href={linkToPrimary}
-            className={`${styles['sectionGrid__head__linkTo']} extend-link`}
-          >
+    <div className={`${styles["container__sectionGrid"]}`}>
+      <div className={`${styles["container__sectionGridPrimary"]}`}>
+        <div className={`${styles["sectionGrid__head"]}`}>
+          <h3 className={`${styles["sectionGrid__head__title"]}`}>{sectionTitlePrimary}</h3>
+          <p className={`${styles["sectionGrid__head__separator"]}`}>{}</p>
+          <a href={linkToPrimary} className={`${styles["sectionGrid__head__linkTo"]} extend-link`}>
             VER MÁS
           </a>
         </div>
         {listItemPrimary}
       </div>
-      <div className={`${styles['container__sectionGridSecondary']}`}>
-        {listItemSecondary}
-      </div>
+      <div className={`${styles["container__sectionGridSecondary"]}`}>{listItemSecondary}</div>
     </div>
   );
 };

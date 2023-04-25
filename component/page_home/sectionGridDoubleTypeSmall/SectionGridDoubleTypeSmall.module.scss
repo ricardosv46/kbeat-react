@@ -10,18 +10,16 @@
 }
 .sectionGrid__head {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   margin: 0;
   gap: 8px;
-  border-bottom: 2px solid #1aba95;
-  border-top: 1px solid #f0f0f0;
   padding-bottom: 9px;
   padding-top: 8px;
   margin-bottom: 8px;
   position: relative;
 }
 .sectionGrid__head__title {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 2rem;
   line-height: 1.6rem;
@@ -30,17 +28,18 @@
 }
 .sectionGrid__head__linkTo {
   display: block;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 700;
   font-variant: all-small-caps;
-  font-size: 1.4rem;
+  font-size: 24px;
   line-height: 1.6rem;
-  color: #1aba95;
-  margin: 0;
+  color: #8a64eb;
+  margin-top: 5px;
+  min-width: 72px;
 }
 .sectionGrid__head__separator {
-  background-color: #1aba95;
-  height: 18px;
+  background-color: #8a64eb;
+  height: 24px;
   width: 2px;
   display: block;
   margin: 0;
@@ -50,19 +49,6 @@
   grid-template-columns: 1fr;
   align-items: start;
   gap: 8px;
-  max-height: 350px;
-  overflow-y: auto;
-  &::-webkit-scrollbar {
-    width: 6px;
-  }       
-  &::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 3px #808080; 
-      border-radius: 4px;
-  }       
-  &::-webkit-scrollbar-thumb {
-      background-color: #767474; 
-      border-radius: 4px;
-  }  
 }
 .listItem__container-secondaryCard {
   display: grid;
@@ -117,7 +103,7 @@
     gap: 0px 16px;
   }
   .listItem__secondaryData {
-    gap: 13px;
+    gap: 8px;
     max-height: 248px;
   }
 }

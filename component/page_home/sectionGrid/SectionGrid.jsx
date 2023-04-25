@@ -4,7 +4,7 @@ import styles from "../sectionGrid/SectionGrid.module.scss";
 import SmallCard from "../smallCard/SmallCard";
 import { colorSection } from "util/colorSection";
 
-const SectionGrid = ({ data, sectionTitle, linkTo = "#" }) => {
+const SectionGrid = ({ data, sectionTitle, linkTo = "#", nColumnas = 2 }) => {
   let dataDefault = [];
   let dataMain = {};
   let listItem;
@@ -33,7 +33,7 @@ const SectionGrid = ({ data, sectionTitle, linkTo = "#" }) => {
           />
         </div>
 
-        <div className={`${styles["listItem__container-secondaryCard"]}`}>
+        <div className={`n-columnas ${styles["listItem__container-secondaryCard"]}`}>
           {dataDefault.slice(1, 9).map((item, index) => {
             const title = item?.title ?? "";
             const imgUrl =
@@ -43,28 +43,38 @@ const SectionGrid = ({ data, sectionTitle, linkTo = "#" }) => {
             const urlNote = item?.slug ?? "";
             return <SmallCard key={`${index}-${title}`} urlImg={imgUrl} title={title} urlNote={urlNote} />;
           })}
+          <style jsx>{`
+            @media (min-width: 769px) {
+              .n-columnas {
+                display: grid;
+                grid-template-columns: repeat(${nColumnas}, 1fr);
+              }
+            }
+          `}</style>
         </div>
       </div>
     );
   }
 
   return (
-    <div className={`${styles["container__sectionGrid"]}`}>
-      <div
-        className={`${styles["sectionGrid__head"]}`}
-        style={{
-          borderBottom: `1px solid ${colorSection(sectionTitle)}`,
-          borderTop: `1px solid ${colorSection(sectionTitle)}`
-        }}
-      >
-        <Title title={sectionTitle} type="h2" />
-        <p className={`${styles["sectionGrid__head__separator"]}`}>{}</p>
-        <a href={linkTo} className={`${styles["sectionGrid__head__linkTo"]} extend-link`}>
-          VER MÁS
-        </a>
+    <>
+      <div className={`${styles["container__sectionGrid"]}`}>
+        <div
+          className={`${styles["sectionGrid__head"]}`}
+          style={{
+            borderBottom: `1px solid ${colorSection(sectionTitle)}`,
+            borderTop: `1px solid ${colorSection(sectionTitle)}`,
+          }}
+        >
+          <Title title={sectionTitle} type="h2" />
+          <p className={`${styles["sectionGrid__head__separator"]}`}>{}</p>
+          <a href={linkTo} className={`${styles["sectionGrid__head__linkTo"]} extend-link`}>
+            VER MÁS
+          </a>
+        </div>
+        {listItem}
       </div>
-      {listItem}
-    </div>
+    </>
   );
 };
 

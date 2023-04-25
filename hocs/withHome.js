@@ -14,6 +14,16 @@ const WithHome = (WrapperComponent) => {
             limit: 9,
             view: "home",
         });
+        const newsWorld = await fetchApi("articles", {
+            category_slug: "mundo",
+            limit: 5,
+            view: "home",
+        });
+        const newsSports = await fetchApi("articles", {
+            category_slug: "deportes",
+            limit: 4,
+            view: "home",
+        });
        
 
 
@@ -21,7 +31,9 @@ const WithHome = (WrapperComponent) => {
         return {
             typePage,
             metaSite,
-            newsSociety
+            newsSociety,
+            newsWorld,
+            newsSports
         };
     };
 
