@@ -51,7 +51,7 @@ const MenuMovil = ({ open, data, styled }) => {
                         <input
                             name="buscando"
                             type="search"
-                            placeholder="Buscar en La República..."
+                            placeholder="Buscar en Kbeat..."
                             onKeyUp={submitKeyPress}
                             className={`${style["menu-mobile__search-input"]}`}
                         />
