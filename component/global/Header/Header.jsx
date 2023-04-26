@@ -45,12 +45,11 @@ const Header = (props) => {
         const adsContainer = document.querySelector(".bl-Ads");
         adsContainer.classList.toggle("bl-Ads--fixed", adsContainer.getBoundingClientRect().top < 0);
         adsContainer.classList.toggle("bl-Ads--headerFixed", wrappedElementHeader?.getBoundingClientRect().bottom < 0);
-        wrappedElementHeader.classList.toggle("header-fixed", document.body.getBoundingClientRect().top < 0);
-        /* wrappedElementHeader.classList.toggle("hide-ad-top", adsContainer.getBoundingClientRect().top < -250); */
+        wrappedElementHeader.querySelector("#menu__today").classList.toggle("sticky", wrappedElementHeader?.getBoundingClientRect().bottom < 0);
+        wrappedElementHeader.querySelector("#container__header").classList.toggle("sticky", wrappedElementHeader?.getBoundingClientRect().bottom < 0);
+        wrappedElementHeader.querySelector("#container__header").classList.toggle("hide-top-news", document.body.getBoundingClientRect().top < -380);
         document.body.style.marginTop = headerHeight * "px";
         const containerColor = document.querySelector("#container__header");
-        const containerList = document.querySelector("#list__menu");
-        const menuToday = document.querySelector("#menu__today");
         
         if (wrappedElementHeader && wrappedElementHeader.getBoundingClientRect().bottom < 0) {
             setState({
@@ -58,9 +57,7 @@ const Header = (props) => {
                 showFixMenu: true,
                 menuMovil: obtenerMenuBuscador,
             });
-            containerColor.classList.toggle("container__fixed", document.body.getBoundingClientRect().top < -260);
-            containerList.classList.toggle("d-none", document.body.getBoundingClientRect().top < -260);
-            menuToday.classList.remove("d-none", document.body.getBoundingClientRect().top < -460);
+            containerColor.classList.toggle("container__fixed", document.body.getBoundingClientRect().top < -370);
         } else {
             setState({
                 ...state,
@@ -68,11 +65,8 @@ const Header = (props) => {
                 menuMovil: obtenerMenuBuscador,
             });
             containerColor.classList.remove("container__fixed", document.body.getBoundingClientRect().top < -260);
-            containerList.classList.remove("d-none", document.body.getBoundingClientRect().top < -260);
-            menuToday.classList.toggle("d-none", document.body.getBoundingClientRect().top < -460);
         }
     };
-
 
     const openMenuFn = () => {
         if (abrirMenu) {
@@ -246,11 +240,11 @@ const Header = (props) => {
                     {internal && showProgressBar && <div className={style["bar"]} ><div className={style["loader"]} style={{ width: `${percentVisible}%`, maxWidth: '100%'}}></div></div>}
                     {showFixMenu && <InputSearch refBtnSearch={refBtnSearch} showSearch={showSearch} />}
                     <div className="list__menu" id="list__menu">
-                        <div className={style["container"]}>
+                        {!showFixMenu && <div className={style["container"]}>
                             <ul className={style["container-header_menu-secciones"]}>
                                 {makeListMenu}
                             </ul>
-                        </div>
+                        </div>}
                     </div>
                     <div className={`${style["container_subMenuHeader"]} ${abrirMenu ? style["activeMenuDropdown"] : ""}`}>{showSubMenu}</div>
                     <div className={style["hidden"]} style={{position: 'relative'}}>
