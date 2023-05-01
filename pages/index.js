@@ -1,10 +1,11 @@
 import { Layout } from "Layouts/Layouts";
 import SectionGrid from "component/page_home/sectionGrid/SectionGrid";
+import SectionGridDegradedColors from "component/page_home/sectionGridDegradedColors/SectionGridDegradedColors";
 import SectionGridDoubleTypeSmall from "component/page_home/sectionGridDoubleTypeSmall/SectionGridDoubleTypeSmall";
 import WithHome from "hocs/withHome";
 
 const Home = (props) => {
-    const { metaSite, adsPage, mainMenu, footerMenu, topicsMenu, newsWorld, newsSociety, newsSports } = props;
+    const { metaSite, adsPage, mainMenu, footerMenu, topicsMenu, newsWorld, newsSociety, newsSports,newsMovies } = props;
     return (
         <Layout
             data={metaSite}
@@ -16,6 +17,8 @@ const Home = (props) => {
             adsPage={adsPage}
             listNote={[]}
         >
+            <SectionGridDegradedColors data={newsMovies}/>
+
             <SectionGrid data={newsSociety} sectionTitle="K-DRAMAS" linkTo="" />
             {/* <SectionGridDouble
                 dataPrimary={newsSociety}

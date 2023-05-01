@@ -24,7 +24,13 @@ const WithHome = (WrapperComponent) => {
             limit: 4,
             view: "home",
         });
-       
+        const newsMovies = await fetchApi("articles", {
+            category_slug: "cine-series/peliculas",
+            limit: 4,
+            view: "home",
+        });
+
+        
 
 
         const typePage = "home";
@@ -33,7 +39,8 @@ const WithHome = (WrapperComponent) => {
             metaSite,
             newsSociety,
             newsWorld,
-            newsSports
+            newsSports,
+            newsMovies
         };
     };
 
