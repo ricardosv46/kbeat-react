@@ -16,6 +16,9 @@ export const colorSection = (sectionName = "") => {
     case "K-BEAUTY":
       color = "#69DBF2";
       break;
+    case "K-POP":
+      color = "#E46EC2";
+      break;
     case "ASIA FAMA":
       color = "#F11167";
       break;
