@@ -237,3 +237,20 @@
 .d-none {
     display: none;
 }
+
+.listItemUltimas__container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+  }
+
+  @media (min-width: 769px) {
+    .listItemUltimas__container{
+        flex-direction: row;
+        align-items: flex-start;
+    }
+  }
+   
+  

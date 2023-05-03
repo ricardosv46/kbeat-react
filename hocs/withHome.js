@@ -41,6 +41,11 @@ const WithHome = (WrapperComponent) => {
 
 
 
+        const newsLast = await fetchApi("articles", {
+            category_slug: "",
+            limit: 9,
+            view: "home",
+        });
 
         const typePage = "home";
         return {
@@ -50,7 +55,8 @@ const WithHome = (WrapperComponent) => {
             newsWorld,
             newsSports,
             newsMovies,
-            mainGrid
+            mainGrid,
+            newsLast
         };
     };
 

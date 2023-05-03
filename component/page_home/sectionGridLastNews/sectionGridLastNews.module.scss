@@ -1,0 +1,41 @@
+// TODO: se agrega css picture y img -> se debe cambiar de manera general una vez que se migre las imágenes
+
+.grillaHome {
+    margin-bottom: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8px;
+    row-gap: 10px;
+
+    article:last-child {
+        display: none;
+      }
+    & picture {
+        overflow: hidden;
+        position: relative;
+        display: block;
+        padding-top: 59%;
+        & img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .grillaHome {
+    width: calc(100% - 316px);
+
+    grid-template-columns: 1fr 1fr 1fr;
+        article:last-child {
+            display: flex;
+          }
+    }
+}
+
+

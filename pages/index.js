@@ -1,26 +1,15 @@
 import { Layout } from "Layouts/Layouts";
 
 import MainGrid from "component/page_home/mainGrid/MainGrid";
+import { SlotAds } from "component/global/AdsManager/SlotAds";
 import SectionGrid from "component/page_home/sectionGrid/SectionGrid";
 import SectionGridDegradedColors from "component/page_home/sectionGridDegradedColors/SectionGridDegradedColors";
 import SectionGridDoubleTypeSmall from "component/page_home/sectionGridDoubleTypeSmall/SectionGridDoubleTypeSmall";
+import SectionGridLastNews from "component/page_home/sectionGridLastNews";
 import WithHome from "hocs/withHome";
 
 const Home = (props) => {
-    const {
-        metaSite,
-        adsPage,
-        mainMenu,
-        footerMenu,
-        topicsMenu,
-        newsWorld,
-        newsSociety,
-        newsSports,
-        newsMovies,
-        mainGrid
-    } = props;
-
-
+    const { metaSite, adsPage, mainMenu, footerMenu, topicsMenu, newsWorld, newsSociety, newsSports, newsMovies, newsLast, mainGrid } = props;
     return (
         <Layout
             data={metaSite}
@@ -33,7 +22,19 @@ const Home = (props) => {
             listNote={[]}
         >
             <MainGrid data={mainGrid} />
+
+
+            <div className='listItemUltimas__container'>
+
+                <SectionGridLastNews data={newsLast} />
+
+                <div className='publicity-300'>
+                    <SlotAds type={"Middle"} data={adsPage?.ads?.data} />
+                </div>
+            </div>
+
             <SectionGridDegradedColors data={newsMovies} />
+
             <SectionGrid data={newsSociety} sectionTitle="K-DRAMAS" linkTo="" />
             <SectionGridDoubleTypeSmall
                 dataPrimary={newsWorld}
