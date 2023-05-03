@@ -1,6 +1,8 @@
 .gridCards{
   display: flex;
   gap: 17.62px;
+  overflow: auto;
+
   figure{
     width: 229px;
     height: 325px;
@@ -9,6 +11,8 @@
       object-fit: cover;
       object-position: center;
       height: 100%;
+      max-width: 229px;
+
     }
   }
 }

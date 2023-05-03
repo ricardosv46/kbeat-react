@@ -13,9 +13,7 @@ const SectionGridDegradedColors = ({ data }) => {
   }
 
   if(itemList){
-    console.log({itemList})
     itemListCard=itemList.map((item,index)=>{
-
 
       const colorsDegraded = index===0?'degraded_1':index===1?'degraded_2':index===2?'degraded_3':'degraded_4'
 
@@ -41,21 +39,6 @@ const SectionGridDegradedColors = ({ data }) => {
   return (
     <div className={`${styles["gridCards"]} `}>
       {itemListCard}
-      {/* <figure className={`${styles["secondarySpotlight__figure"]}`}>
-        <img
-          src={newResize.resizeWapa(urlImg, 229, 325)}
-          decoding="async"
-          alt={altImg}
-          title={title}
-          className={`${styles["secondarySpotlight__image"]}}`}
-        />
-        <div className={`${styles["secondarySpotlight__figure-opacity"]}`} style={{ height: `${gradientHeight}` }}></div>
-      </figure>
-      <a href={urlNote} className="extend-link">
-        <div className={`${styles["secondarySpotlight__content"]}`}>
-          <h2 className={styles["secondarySpotlight__title"]}>{title}</h2>
-        </div>
-      </a> */}
     </div>
   );
 };

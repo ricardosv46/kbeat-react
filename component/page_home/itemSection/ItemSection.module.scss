@@ -1,0 +1,83 @@
+
+
+.itemSection__image {
+    position: relative;
+    margin:0;
+   
+
+    img {
+        border-radius: 5px;
+        width: 100%;
+    }
+   
+}
+.itemSection__title {
+    font-size: 13px;
+    line-height: 15px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    color: #333333;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 48px;
+    font-family: "Roboto", sans-serif;
+    &:hover{
+        color : #b22843;
+    }
+}
+.itemSection__title:hover {
+    color : #b22843;
+    // text-decoration: underline;
+}
+
+.itemSection__section {
+    font-family: "Roboto", sans-serif;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    font-variant: all-small-caps;
+    position: relative;
+    margin: 4px 0 0 0;
+}
+
+.video-type {
+    z-index: 0;
+}
+.video-type:before,
+.video-type:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 8px;
+}
+.video-type:before {
+    width: 45px;
+    height: 45px;
+    left: 8px;
+    background: rgba(#EA5573, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+.video-type:after {
+    border-top: 10.125px solid transparent;
+    border-bottom: 10.125px solid transparent;
+    left: 25px;
+    bottom: 21px;
+    border-left: 16.875px solid #fff;
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+
+.mediumCard__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
