@@ -2,27 +2,9 @@
   display: flex;
   gap: 8px;
   width: 100%;
+  align-items: center;
 }
-.smallCard__title {
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.smallCard__image {
-  display: block;
-  width: 60px;
-  height: 60px;
-  border-radius: 5px;
-  object-fit: cover;
-}
+
 .hidden {
   display: none;
 }
@@ -42,12 +24,4 @@
   line-height: 16px;
   color: #333333;
 }
-@media (min-width: 769px) {
-  .smallCard__image {
-    width: 73px;
-    height: 50px;
-  }
-  .smallCard__title {
-    line-height: 18px;
-  }
-}
+
