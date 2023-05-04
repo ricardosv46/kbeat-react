@@ -10,18 +10,17 @@
 .container__columns {
     @media screen and (min-width: 1000px) {
         display: flex;
-        margin: 0 -8px;
         flex-wrap: wrap;
+        gap: 16px;
         .col__content {
             flex-basis: 0;
             flex-grow: 1;
             position: relative;
-            padding: 0 8px;
             margin: 0px;
             box-sizing: border-box;
-            &.offset-313 {
-                max-width: 321px;
-                flex: 0 0 321px
+            &.offset-300 {
+                max-width: 300px;
+                flex: 0 0 300px
             }
         }
     }
@@ -141,7 +140,7 @@
 }
 
 .showMore__button {
-    background-color: #000;
+    background-color: #3CB1B9;
     border: none;
     border-radius: 5px;
     color: #ffffff;
@@ -252,5 +251,4 @@
         align-items: flex-start;
     }
   }
-   
-  
+

@@ -3,7 +3,7 @@ import style from 'component/global/AuthorSign/AuthorSign.module.scss';
 
 const newResize = new resizePrototype();
 
-const AuthorSign = ({ data,showImage=true}) => {
+const AuthorSign = ({ data,showImage=true,subText}) => {
     let nameAuthor,
     slugAuthor,
     photo;
@@ -19,8 +19,8 @@ const AuthorSign = ({ data,showImage=true}) => {
 
     return (
         <a className={style["authorSign"]} href={slugAuthor}>
-             { showImage && <img loading="lazy"  alt={nameAuthor || "LR"} title={nameAuthor || "LR"} className={style["authorSign__image"]} src={newResize.resizeWapa(photo || '/static/lr/lr_author.png',24,24)} />}
-            <span className={`${ showImage ?  style['left'] : ''} ${style["authorSign__name"]}`}>{ !showImage ? 'Por ' : ''} {nameAuthor}</span>
+             { showImage && <img loading="lazy"  alt={nameAuthor || "LR"} title={nameAuthor || "LR"} className={style["authorSign__image"]} src={newResize.resizeWapa(photo || '/static/kbeat_author.png',24,24)} />}
+            <span className={`${ showImage ?  style['left'] : ''} ${style["authorSign__name"]}`}>{ !showImage ? 'Por ' : ''} {subText} {nameAuthor}</span>
         </a>
     )
 }

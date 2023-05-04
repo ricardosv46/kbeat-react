@@ -10,9 +10,12 @@
     border-radius: 12px;
 }
 .authorSign__name {
-    font-size: 12px;
-    font-weight: 600;
-    color: $granite-gray;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    font-style: normal;
+    color: $crimson;
+    font-variant: all-small-caps;
 }
 
 .left{

@@ -20,13 +20,12 @@ const Home = (props) => {
             listNote={[]}
         >
 
-            <div className='listItemUltimas__container'>
+            <div className='container__columns'>
+                    <SectionGridLastNews data={newsLast} /> 
+                <article className='col__content offset-300'>
+                    <SlotAds type={"Middle"} data={adsPage?.ads?.data} />
+                </article>
                     
-                        <SectionGridLastNews data={newsLast} /> 
-                    
-                        <div className='publicity-300'>
-                            <SlotAds type={"Middle"} data={adsPage?.ads?.data} />
-                        </div>
             </div>
 
             <SectionGridDegradedColors data={newsMovies}/>

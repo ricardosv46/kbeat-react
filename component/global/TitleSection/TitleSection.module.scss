@@ -1,25 +1,34 @@
 @import "src/base/variables";
 
 .titleSection__wrapper {
-    border-bottom: 1px solid #e4e4e4;
-    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid $crimson;
+    border-top: 1px solid $crimson;
     padding: 8px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+}
+
+.more__colors{
+    border-bottom: 1px solid #6DC4CB;;
+    border-top: 1px solid #6DC4CB;;
+}
+
+.mb{
+    margin-bottom: 16px;
 }
 
 .titleSection__main {
     display: inline-flex;
     align-items: center;
-    font-size: 18px;
+    font-size: 24px;
     // font-size: 20px;
-    line-height: 22px;
+    line-height: 28px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #000000;
-    font-family: "PT Serif";
+    color: $medium-gray;
+    font-style: normal;
+    // font-family: "Roboto",sans-serif;
     // @media (min-width: 740px) {
     //     font-size: 24px;
     //     line-height: 28px;
