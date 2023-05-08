@@ -1,0 +1,17 @@
+.mainContent__live-content {
+    background: #fff8fc;
+    border: 0.5px solid #fe0404;
+    border-radius: 5px;
+    padding: 8px;
+}
+.mainContent__live-title {
+    display: flex;
+    align-items: center;
+    margin: 8px 0 12px 0;
+    h2 {
+        color: #fe0404;
+        font-size: 14px;
+        margin-left: 12px;
+        line-height: 16px;
+    }
+}

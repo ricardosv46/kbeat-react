@@ -1,0 +1,24 @@
+@import "src/base/variables";
+.main__interlinking {
+    margin: 8px 0px 16px 0;
+    border-left: 3px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .content__interlinking {
+        color: red;
+        list-style: none;
+        font-size: 18px;
+    }
+
+    .interlinking__item {
+        line-height: 16px;
+        padding: 0 16px;
+        .interlinking__link {
+            font-size: 14px;
+            font-weight: 700;
+            color: red;
+            line-height: 16px;
+        }
+    }
+}

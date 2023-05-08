@@ -124,7 +124,7 @@ const Layout = (props) => {
             }
             if(data.data?.categories?.length>0){
                 const {categories} = data.data;
-                isHumor = categories.some(category=>humorCategories.some(humorCat=>category.slug.includes(humorCat)))
+                // isHumor = categories.some(category=>humorCategories?.some(humorCat=>category.slug.includes(humorCat)))
                 categories.forEach(category=>{
                     if(validateGeolocation(category.slug)){
                         geoCode = validateGeolocation(category.slug)
@@ -424,7 +424,7 @@ const Layout = (props) => {
                 {id_article && (
                     <>
                         <meta idcronos={id_article} />
-                        {internal && !isHumor && <link rel="amphtml" href={`${process.env.SITE_DOMAIN_URL}/amp${meta_slug}`} />}
+                        {internal && <link rel="amphtml" href={`${process.env.SITE_DOMAIN_URL}/amp${meta_slug}`} />}
                     </>
                 )}
                 {geoCode && <meta name="lang" content={geoCode} />}

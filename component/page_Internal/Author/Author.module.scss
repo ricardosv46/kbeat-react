@@ -1,0 +1,25 @@
+.comp__author {
+    display: flex;
+    flex-direction: column;
+    .author__redSocial_link {
+        color: #666;
+        font-weight: 700;
+        text-decoration: none;
+        margin: 4px 0;
+        font-family: Roboto, sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 700;
+        font-feature-settings: "smcp", "c2sc";
+    }
+    .author__image {
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #bfbfbf;
+        border-radius: 50%;
+        height: 25px;
+        margin: 0 10px 0 0;
+        width: 25px;
+        overflow: hidden;
+    }
+}
