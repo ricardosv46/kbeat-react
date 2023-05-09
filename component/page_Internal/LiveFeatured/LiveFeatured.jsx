@@ -1,5 +1,5 @@
-import { Score } from "component/page_Internal/LiveScore/LiveScore";
-import { LiveFeaturedItem } from "component/page_Internal/LiveFeaturedItem/LiveFeaturedItem";
+import { Score } from "component/Page_Internal/LiveScore/LiveScore";
+import { LiveFeaturedItem } from "component/Page_Internal/LiveFeaturedItem/LiveFeaturedItem";
 import style from "component/Page_Internal/LiveFeatured/LiveFeatured.module.scss"
 
 const LiveFeatured = ({ dataLiveIsFeatured, dataLive, showImage, legendImage, amp }) => {

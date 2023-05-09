@@ -2,6 +2,7 @@ import { useState } from 'react';
 // import IconTikTok from '../Icon/IconTikTok';
 // import { IconWhatsapp } from '../Icon/IconWhatsapp';
 import style from "component/global/Footer/Footer.module.scss"
+const LogoLR = "/static/logo-kbeat-colors.svg";
 
 const date = new Date();
 
@@ -176,7 +177,7 @@ const Footer = ({ data }) => {
 
 
     const siteLogo =  <a href="/" className={`${style['footer__mainLogo']}`} aria-label={'redirect home'}>
-                        <img src='static/logo-kbeat.svg' alt="Diario la República hoy portada" width="177" height="59" loading="lazy"/>
+                        <img src={LogoLR} alt="Diario la República hoy portada" width="267" height="90" loading="lazy"/>
                       </a>
 
     const contactLinks = <div className={`${style['footer__contact--links']}`}>

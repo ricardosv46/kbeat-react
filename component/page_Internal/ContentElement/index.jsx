@@ -1,13 +1,13 @@
-import { Paragraph } from "component/page_Internal/ContentElement/TypeElement/Paragraph";
-import { Table } from "component/page_Internal/ContentElement/TypeElement/Table";
-import { Quote } from "component/page_Internal/ContentElement/TypeElement/Quote/Quote";
-import { Heading } from "component/page_Internal/ContentElement/TypeElement/Heading";
-import { Image } from "component/page_Internal/ContentElement/TypeElement/Image";
-import { List } from "component/page_Internal/ContentElement/TypeElement/List";
-import { Inlive } from "component/page_Internal/ContentElement/TypeInlive/Inlive";
-import { AdsBody } from "component/page_Internal/ContentElement/TypeElement/AdsBody/AdsBody";
-import { ContentHtml } from "component/page_Internal/ContentElement/TypeElement/Html/ContentHtml";
-import { ContentEmbed } from "component/page_Internal/ContentElement/TypeElement/Embed";
+import { Paragraph } from "component/Page_Internal/ContentElement/TypeElement/Paragraph";
+import { Table } from "component/Page_Internal/ContentElement/TypeElement/Table";
+import { Quote } from "component/Page_Internal/ContentElement/TypeElement/Quote/Quote";
+import { Heading } from "component/Page_Internal/ContentElement/TypeElement/Heading";
+import { Image } from "component/Page_Internal/ContentElement/TypeElement/Image";
+import { List } from "component/Page_Internal/ContentElement/TypeElement/List";
+import { Inlive } from "component/Page_Internal/ContentElement/TypeInlive/Inlive";
+import { AdsBody } from "component/Page_Internal/ContentElement/TypeElement/AdsBody/AdsBody";
+import { ContentHtml } from "component/Page_Internal/ContentElement/TypeElement/Html/ContentHtml";
+import { ContentEmbed } from "component/Page_Internal/ContentElement/TypeElement/Embed";
 // import { CoreEmbed } from "component/page_internal/contentElement/typeElement/coreEmbed";
 
 const ContentElement = (props) => {

@@ -1,10 +1,10 @@
-import { ContentElement } from "component/page_Internal/ContentElement/index";
-import { Author } from "component/page_Internal/Author/Author";
+import { ContentElement } from "component/Page_Internal/ContentElement/index";
+import { Author } from "component/Page_Internal/Author/Author";
 import { BtnShared } from "component/global/BtnShared/BtnShared";
-import { Interlinking } from "component/page_Internal/Interlinking/Interlinking";
-import { MainMultimedia } from "component/page_Internal/MainMultimedia/MainMultimedia";
+import { Interlinking } from "component/Page_Internal/Interlinking/Interlinking";
+import { MainMultimedia } from "component/Page_Internal/MainMultimedia/MainMultimedia";
 import { DateNote, TitleSection } from "component/global/TitleSection/TitleSection";
-import { LiveFeatured } from "component/page_Internal/LiveFeatured/LiveFeatured";
+import { LiveFeatured } from "component/Page_Internal/LiveFeatured/LiveFeatured";
 import { SlotAds } from "component/global/AdsManager/SlotAds";
 import style from "component/Page_Internal/MainContent/MainContent.module.scss";
 import { ButtonGroup } from "../ButtonGroup/ButtonGroup";
@@ -31,7 +31,7 @@ const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, da
         slot_tag = "Middle2"
     }
 
-    
+
     if (liveBlogPosting && liveBlogPosting?.live && Object.keys(liveBlogPosting.live)?.length) {
         inlive = {
             ...liveBlogPosting.live,
@@ -111,7 +111,7 @@ const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, da
                             }
                         }
                         if (item.type == "paragraph") {
-                            
+
                             if (counter_paragraph === 0) {
                                 const ads1 = {
                                     _id: "ADSLR01",
@@ -207,7 +207,7 @@ const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, da
         showInternal = (
             <div className={style["main__content"]} id="interna_content">
                 {/* {type!=='video' &&  showSection} */}
-                {type==='video' ? 
+                {type==='video' ?
                 <>
                     {dataLiveIsFeatured && dataLiveIsFeatured.length > 0 ? (
                         <LiveFeatured dataLiveIsFeatured={dataLiveIsFeatured} showImage={showImage} dataLive={liveBlogPosting?.live} />
@@ -217,13 +217,13 @@ const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, da
                     <h1 className={style["main__title"]}>{sharedTitle}</h1>
                     {showTeaser}
                     {showInterlinking}
-                   
+
                 </>   :
                 <>
                     <h1 className={style["main__title"]}>{sharedTitle}</h1>
                     {showTeaser}
                     {showInterlinking}
-                    
+
                     <div className={style["main__author--shared"]}>{showAuthor} <DateNote update_date={data?.update_date} /></div>
                     {dataLiveIsFeatured && dataLiveIsFeatured.length > 0 ? (
                         <LiveFeatured dataLiveIsFeatured={dataLiveIsFeatured} showImage={showImage} dataLive={liveBlogPosting?.live} />
@@ -243,7 +243,6 @@ const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, da
                 </div>
                 <div className={style["main__body"]}>{showContent}</div>
                 <ul className={style["mainContent__tags-list"]}>{showTags}</ul>
-                <ButtonGroup />
             </div>
         );
     }

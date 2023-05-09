@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { AmpOpta } from "component/page_Internal/ContentElement/TypeElement/AmpOpta/index";
+import { AmpOpta } from "component/Page_Internal/ContentElement/TypeElement/AmpOpta/index";
 import { parseIframe } from "util/parseIframe";
 import Head from "next/head";
 import { TwEmbed } from "component/TwEmbed";

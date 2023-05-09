@@ -6,14 +6,14 @@
     .main__top {
         display: flex;
         justify-content: space-between;
-        border: 1px solid #ccc;
+        border: 1px solid $medium-gray;
         border-right: none;
         border-left: none;
         padding: 8px 0;
         .main__section {
             font-weight: 700;
             font-size: 24px;
-            color: #ccc;
+            color: $medium-gray;
             text-transform: uppercase;
             font-size: 14px;
         }
@@ -24,7 +24,7 @@
             font-size: 14px;
             line-height: 16px;
             font-variant: all-small-caps;
-            color: #ccc;
+            color: $medium-gray;
         }
     }
     .main__title {
@@ -62,9 +62,9 @@
         width: 100%;
     }
     .mainContent__legendSpan {
-        color: #ccc;
+        color: $medium-gray;
         display: block;
-        border-top: 1px solid #ccc;
+        border-top: 1px solid $medium-gray;
     }
     .content__author--btnshared {
         display: flex;
@@ -78,9 +78,8 @@
     .main__author--shared {
         display: flex;
         align-items: center;
-        align-content: center;
         justify-content: space-between;
-        margin: 2px 0;
+        margin: 0px 0 16px;
         .main__date {
             font-family: "Roboto";
             font-style: normal;
@@ -88,7 +87,7 @@
             font-size: 14px;
             line-height: 16px;
             font-variant: all-small-caps;
-            color: #ccc;
+            color: $medium-gray;
         }
     }
     .textMainContent {
@@ -105,11 +104,11 @@
         margin-top: 15px;
         &:before {
             content: "Temas";
-            font-family: "PT Serif";
+            font-family: "Roboto",sans-serif;
             font-style: normal;
             font-weight: 700;
-            font-size: 18px;
-            line-height: 22px;
+            font-size: 20px;
+            line-height: 16px;
             margin-right: 10px;
         }
     }
@@ -122,11 +121,11 @@
         font-weight: 700;
         font-variant: all-small-caps;
         a {
-            color: red;
+            color: $crimson;
         }
         &::before {
             content: "|";
-            color: red;
+            color: $crimson;
             font-size: 20px;
             padding: 0 8px;
         }
@@ -137,7 +136,7 @@
         display: flex;
         flex-direction: column;
         gap: 5px;
-        color: red;
+        color: $crimson;
         border-left: 3px solid;
         font-size: 1.4rem;
         line-height: 1.15;
@@ -159,9 +158,9 @@
             height: auto;
         }
         p {
-            color: #ccc;
-            font-size: 16px;
-            line-height: 1.6;
+            color: $medium-gray;
+            font-size: 14px;
+            line-height: 18px;
             font-weight: initial;
             margin-top: 0;
             margin-bottom: 1rem;
@@ -169,7 +168,7 @@
             font-family: "Roboto", sans-serif;
         }
         a {
-            color: red;
+            color: $crimson;
             text-decoration: underline;
             overflow-wrap: break-word;
         }
@@ -189,7 +188,7 @@
             margin-inline-start: 0px;
             margin-inline-end: 0px;
             font-weight: bold;
-            color: blue;
+            color: $medium-gray;
             margin-bottom: 0.5rem;
         }
         h4 {
@@ -210,7 +209,7 @@
                 font-size: 16px;
                 font-weight: 300;
                 padding: 7px 7px 7px 2rem;
-                border-bottom: 1px solid #ccc;
+                border-bottom: 1px solid $medium-gray;
                 position: relative;
                 a {
                     font-size: 14px;
@@ -226,7 +225,7 @@
             padding-left: 16px;
             strong,
             b {
-                color: red;
+                color: $crimson;
                 font-size: 14px;
                 font-family: "Roboto";
                 font-weight: 700;
@@ -237,7 +236,7 @@
                 a {
                     display: block;
                     text-decoration: none;
-                    color: $black;
+                    color: $medium-gray;
                     font-weight: 700;
                     font-size: 14px;
                     font-family: "Roboto";
@@ -254,7 +253,7 @@
             max-width: 640px;
             width: 100%;
             margin-bottom: 8px;
-            border: 1px solid #ccc;
+            border: 1px solid $medium-gray;
             tr:nth-of-type(even) {
                 background: $white;
             }
@@ -288,7 +287,7 @@
             border-radius: 50%;
             width: 5px;
             height: 5px;
-            background-color: red;
+            background-color: $crimson;
             position: absolute;
             top: 50%;
             left: 1rem;
@@ -298,17 +297,17 @@
             h3 {
                 font-size: 2rem;
                 padding: 0.7rem 1rem;
-                border-top: 1px solid #ccc;
-                border-bottom: 1px solid #ccc;
+                border-top: 1px solid $medium-gray;
+                border-bottom: 1px solid $medium-gray;
                 margin-bottom: 0;
                 line-height: 2rem;
             }
             ul {
                 padding-left: 0;
                 li {
-                    background-color: #ccc;
+                    background-color: $medium-gray;
                     display: flex;
-                    border-bottom: 1px solid #ccc;
+                    border-bottom: 1px solid $medium-gray;
                     padding: 7px 10px 7px 2rem;
                     position: relative;
                     a {
@@ -362,7 +361,7 @@
 
     @media (min-width: 1000px) {
         .content__internal {
-            border: 2px solid red;
+            border: 2px solid $crimson;
         }
     }
 }
@@ -371,9 +370,10 @@
     gap: 5px;
     &::before {
         content: "Compartir";
-        font-size: 14px;
+        font-size: 10px;
+        line-height: 12px;
         font-weight: 700;
-        color: #ccc;
+        color: $medium-dark-gray;
         display: none;
 
         @include min768p {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { LiveSchema } from 'component/global/Schemas/LiveSchemas';
-import { AdsBody } from "component/page_Internal/ContentElement/TypeElement/AdsBody/AdsBody";
+import { AdsBody } from "component/Page_Internal/ContentElement/TypeElement/AdsBody/AdsBody";
 import style from "component/Page_Internal/ContentElement/TypeInlive/Inlive.module.scss"
 
 const MakeElementLBP = ({setElement, dataAds, tolalAds, amp}) => {
