@@ -1,7 +1,7 @@
 import { Title } from "component/global/Title/Title";
-import DegradedCard from "../degradedCard/DegradedCard";
-import styles from "../sectionGrid/SectionGrid.module.scss";
-import SmallCard from "../smallCard/SmallCard";
+import DegradedCard from "../DegradedCard/DegradedCard";
+import styles from "../SectionGrid/SectionGrid.module.scss";
+import SmallCard from "../SmallCard/SmallCard";
 import { colorSection } from "util/colorSection";
 
 const SectionGrid = ({ data, sectionTitle, linkTo = "#", nColumnas = 2 }) => {

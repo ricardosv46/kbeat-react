@@ -1,6 +1,6 @@
 import React from "react";
-import MediumCard from "../mediumCard/MediumCard";
-import SmallCard from "../smallCard/SmallCard";
+import MediumCard from "../MediumCard/MediumCard";
+import SmallCard from "../SmallCard/SmallCard";
 
 const MainGrid = ({ data }) => {
   let firstColumn = null;

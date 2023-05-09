@@ -1,5 +1,5 @@
-import DegradedCard from '../degradedCard/DegradedCard';
-import styles from '../sectionCard/SectionCard.module.scss';
+import DegradedCard from '../DegradedCard/DegradedCard';
+import styles from '../SectionCard/SectionCard.module.scss';
 
 const SectionCard = ({
   urlNote,

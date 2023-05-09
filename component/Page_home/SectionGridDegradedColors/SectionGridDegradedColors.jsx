@@ -1,6 +1,6 @@
 // import TitleSection from '../../../shared/TitleSection/default';
 import resizePrototype from "util/resizePrototype";
-import styles from "../sectionGridDegradedColors/SectionGridDegradedColors.module.scss";
+import styles from "../SectionGridDegradedColors/SectionGridDegradedColors.module.scss";
 
 const newResize = new resizePrototype();
 

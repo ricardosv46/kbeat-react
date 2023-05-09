@@ -1,14 +1,14 @@
-import MediumCard from '../mediumCard/MediumCard';
+import MediumCard from '../MediumCard/MediumCard';
 import styles from '../grillaAutomatica/GrillaAutomatica.module.scss';
 
-const GrillaNoAutomatica = ({ data }) => {
+const GrillaAutomatica = ({ data }) => {
   let dataDefault = [];
   let listItem;
   let nameGrilla = '';
   let linkTo = '';
 
-  if (data?.spotlight?.data?.item.length > 0) {
-    dataDefault = data?.spotlight?.data?.item;
+  if (data?.spotlight?.data?.automatic[0]?.notes?.length > 0) {
+    dataDefault = data?.spotlight?.data?.automatic[0]?.notes;
     nameGrilla = data?.spotlight?.data?.title[0];
     linkTo = data?.spotlight?.data?.url[0];
   } else {
@@ -21,10 +21,15 @@ const GrillaNoAutomatica = ({ data }) => {
     listItem = (
       <div className={`${styles['listItem__container']} `}>
         {dataDefault.map((item, index) => {
-          imgUrl = item?.image?.url || '/static/images/placeholder.png';
+          imgUrl =
+            item?.data?.multimedia.find((media) => media.type == 'image')
+              ?.path ||
+            item?.data?.multimedia.find((media) => media.type == 'video')?.data
+              .image_path ||
+            '/static/images/placeholder.png';
           const title = item?.title ?? '';
-          const urlNote = item?.url ?? '';
-          imgAlt = item?.image?.alt ?? '';
+          const urlNote = item?.slug ?? '';
+          imgAlt = item?.data?.multimedia[0]?.data?.alt ?? '';
           if (index < 4) {
             return (
               <MediumCard
@@ -60,4 +65,4 @@ const GrillaNoAutomatica = ({ data }) => {
   );
 };
 
-export default GrillaNoAutomatica;
+export default GrillaAutomatica;

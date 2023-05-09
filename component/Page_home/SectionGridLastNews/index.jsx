@@ -1,5 +1,5 @@
 import style from "./sectionGridLastNews.module.scss";
-import { ItemSection } from "../itemSection";
+import { ItemSection } from "../ItemSection";
 
 const SectionGridLastNews = ({data}) => {
     let items = data?.articles?.data;

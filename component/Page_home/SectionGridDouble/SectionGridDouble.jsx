@@ -1,7 +1,7 @@
-import DegradedCard from "../degradedCard/DegradedCard";
-import SectionCard from "../sectionCard/SectionCard";
+import DegradedCard from "../DegradedCard/DegradedCard";
+import SectionCard from "../SectionCard/SectionCard";
 import styles from "../sectionGridDouble/SectionGridDouble.module.scss";
-import SmallCard from "../smallCard/SmallCard";
+import SmallCard from "../SmallCard/SmallCard";
 
 
 const SectionGridDouble = ({

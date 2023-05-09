@@ -1,8 +1,7 @@
 import { Title } from "component/global/Title/Title";
-import DegradedCard from "../degradedCard/DegradedCard";
-import SectionCard from "../sectionCard/SectionCard";
-import styles from "../sectionGridDoubleTypeSmall/SectionGridDoubleTypeSmall.module.scss";
-import SmallCard from "../smallCard/SmallCard";
+import DegradedCard from "../DegradedCard/DegradedCard";
+import styles from "../SectionGridDoubleTypeSmall/SectionGridDoubleTypeSmall.module.scss";
+import SmallCard from "../SmallCard/SmallCard";
 import { colorSection } from "util/colorSection";
 
 // DataPrimary: recibe un array de 5 objetos

@@ -1,5 +1,5 @@
 import { colorSection } from "../../../util/colorSection";
-import styles from "../mediumCard/MediumCard.module.scss";
+import styles from "../MediumCard/MediumCard.module.scss";
 import resizePrototype from "../../../util/resizePrototype";
 
 const newResize = new resizePrototype();

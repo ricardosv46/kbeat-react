@@ -1,6 +1,6 @@
 // import TitleSection from '../../../shared/TitleSection/default';
 import resizePrototype from "../../../util/resizePrototype";
-import styles from "../degradedCard/DegradedCard.module.scss";
+import styles from "../DegradedCard/DegradedCard.module.scss";
 
 const newResize = new resizePrototype();
 

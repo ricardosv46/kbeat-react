@@ -1,11 +1,11 @@
 import { Layout } from "Layouts/Layouts";
 
-import MainGrid from "component/Page_home/mainGrid/MainGrid";
+import MainGrid from "component/Page_home/MainGrid/MainGrid";
 import { SlotAds } from "component/global/AdsManager/SlotAds";
-import SectionGrid from "component/Page_home/sectionGrid/SectionGrid";
-import SectionGridDegradedColors from "component/Page_home/sectionGridDegradedColors/SectionGridDegradedColors";
-import SectionGridDoubleTypeSmall from "component/Page_home/sectionGridDoubleTypeSmall/SectionGridDoubleTypeSmall";
-import SectionGridLastNews from "component/Page_home/sectionGridLastNews";
+import SectionGrid from "component/Page_home/SectionGrid/SectionGrid";
+import SectionGridDegradedColors from "component/Page_home/SectionGridDegradedColors/SectionGridDegradedColors";
+import SectionGridDoubleTypeSmall from "component/Page_home/SectionGridDoubleTypeSmall/SectionGridDoubleTypeSmall";
+import SectionGridLastNews from "component/Page_home/SectionGridLastNews";
 import WithHome from "hocs/withHome";
 
 const Home = (props) => {

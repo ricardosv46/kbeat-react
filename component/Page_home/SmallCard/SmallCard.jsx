@@ -1,5 +1,5 @@
 import { colorSection } from "../../../util/colorSection";
-import styles from "../smallCard/SmallCard.module.scss";
+import styles from "../SmallCard/SmallCard.module.scss";
 import resizePrototype from "../../../util/resizePrototype";
 
 const newResize = new resizePrototype();
