@@ -50,7 +50,7 @@ const BtnShared = (props) => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={socialMedia[type]["label"]}
-        className={`${style["item-social"]} ${cssNameModule}`}>
+        className={`${style["item-social"]} ${style[`bg-${type}`]} ${cssNameModule}`}>
             {socialMedia[type]["component"]}
             {socialMedia[type]["text"]}
     </a>

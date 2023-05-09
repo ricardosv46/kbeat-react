@@ -56,8 +56,6 @@ const ListSection = (props) => {
                 if (item.type === "ads") {
                     return <SlotAds type={item?.type_ads} data={adsPage?.ads?.data} key={item?._id} />;
                 } else {
-
-
                         const image = item?.data?.multimedia?.find(media => media.type == "image")?.path ||
                         item?.data?.multimedia?.find(media => media.type == "video")?.data?.image_path || process.env.IMAGE_DEFAULT_1250x735;
                         const isVideo = item?.data?.multimedia?.some(media => media.type == "video")

@@ -10,6 +10,7 @@ import { OffersToday } from "component/page_Internal/OffersToday/OffersToday";
 import { SchemaCronos } from "component/global/Schemas/SchemaCronos";
 import { Opta } from "component/global/Opta/Opta";
 import { Moreseen } from 'component/global/Moreseen/Moreseen';
+import { TitleSection } from 'component/global/TitleSection/TitleSection';
 
 const Section = dynamic(import("pages/[section]/index"));
 
@@ -75,6 +76,10 @@ const Internal = (props) => {
     const relatedArticles = article_internal?.article?.data?.related?.items?.slice(0,3) || [];
     const relatedEvergreenArticles = everGreenArticles?.slice(0,3) || []
     const interestList = {external: {data: [...relatedArticles, ...relatedEvergreenArticles]}}
+
+    const slugSection = article_internal?.article?.data?.categories[0].slug;
+    const firstCategories = article_internal?.article?.data?.categories[0].slug.split("/")[1];
+    const titleMostViewed = article_internal?.article?.data?.categories.filter((item) => item.slug.endsWith(firstCategories))[0]?.name || article_internal?.article?.data?.categories[0].name;
     
     return (
         <Layout
@@ -89,6 +94,7 @@ const Internal = (props) => {
         >
             {data_schema_cronos}
             <Head>{isOpta && <Opta />}</Head>
+            <TitleSection name={titleMostViewed} tag="span" href={slugSection} />
             <div className="container__columns">
                 <main className="col__content">
                     <article>

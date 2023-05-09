@@ -16,7 +16,7 @@ import resizePrototype from "util/resizePrototype";
 }]
 
 
-const Author = ({ data, amp }) => {
+const Author = ({ data, amp,subText }) => {
 
     const newResize = new resizePrototype();
 
@@ -26,7 +26,7 @@ const Author = ({ data, amp }) => {
     let imgAuthorPath = null;
     let show_author_content = null;
     let showAuthor = null;
-    let  authorName;
+    let authorName;
 
         const authors = data?.data?.authors?.length>0 ? data.data.authors  : authorDefault;
 
@@ -61,7 +61,7 @@ const Author = ({ data, amp }) => {
             showAuthor = (
                 <a href={author_slug} itemProp="url" className={!amp ? style["author__redSocial_link"] : "author__redSocial_link"}>
                     <div className={!amp ? style["author__image"] : "author__image"}>{show_image}</div>
-                    {authorName}
+                    {subText}{authorName}
                 </a>
             )
         }

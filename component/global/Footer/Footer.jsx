@@ -176,8 +176,8 @@ const Footer = ({ data }) => {
 
 
     const siteLogo =  <a href="/" className={`${style['footer__mainLogo']}`} aria-label={'redirect home'}>
-                        <img src='static/logo-kbeat-colors.svg' alt="Diario la República hoy portada" height="75" width="204" loading="lazy"/>
-                    </a>
+                        <img src='static/logo-kbeat.svg' alt="Diario la República hoy portada" width="177" height="59" loading="lazy"/>
+                      </a>
 
     const contactLinks = <div className={`${style['footer__contact--links']}`}>
             <a className="" href="#">Contáctanos</a>

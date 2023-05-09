@@ -3,7 +3,7 @@ import { Author } from "component/page_Internal/Author/Author";
 import { BtnShared } from "component/global/BtnShared/BtnShared";
 import { Interlinking } from "component/page_Internal/Interlinking/Interlinking";
 import { MainMultimedia } from "component/page_Internal/MainMultimedia/MainMultimedia";
-import { TitleSection } from "component/global/TitleSection/TitleSection";
+import { DateNote, TitleSection } from "component/global/TitleSection/TitleSection";
 import { LiveFeatured } from "component/page_Internal/LiveFeatured/LiveFeatured";
 import { SlotAds } from "component/global/AdsManager/SlotAds";
 import style from "component/Page_Internal/MainContent/MainContent.module.scss";
@@ -11,18 +11,18 @@ import { ButtonGroup } from "../ButtonGroup/ButtonGroup";
 
 const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, dataLiveIsFeatured }) => {
     let showTeaser = null;
-    let showSection = null;
+    // let showSection = null;
     let showTags = null;
     let showContent = null;
     let showImage = null;
     let showAuthor = null;
-    let titleMostViewed = "";
+    // let titleMostViewed = "";
     let newContentElements = [];
     let slug_note;
     let sharedTitle;
     let inlive = null;
     let showInterlinking;
-    let slugSection;
+    // let slugSection;
     let showInternal = null;
     // let isVideo;
 
@@ -53,7 +53,7 @@ const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, da
         if (data.data && Object.keys(data.data) && Object.keys(data.data).length) {
             const { data: datos } = data;
 
-                showAuthor = <Author data={data} />;
+                showAuthor = <Author data={data} subText='POR: ' />
 
             if (datos.teaser_html && datos.teaser_html.length) {
                 let teaserContent = datos.teaser_html;
@@ -77,14 +77,14 @@ const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, da
                 // isVideo = datos.multimedia[0].type == "video";
                 showImage = <MainMultimedia data={datos.multimedia} />;
             }
-            if (datos.categories && datos.categories[0] && datos.categories[0].name && datos.categories[0].name.length) {
-                slugSection = datos.categories[0].slug;
-                const firstCategories = datos.categories[0].slug.split("/")[1];
-                titleMostViewed =
-                    datos.categories.filter((item) => item.slug.endsWith(firstCategories))[0]?.name || datos.categories[0].name;
+            // if (datos.categories && datos.categories[0] && datos.categories[0].name && datos.categories[0].name.length) {
+            //     slugSection = datos.categories[0].slug;
+            //     const firstCategories = datos.categories[0].slug.split("/")[1];
+            //     titleMostViewed =
+            //         datos.categories.filter((item) => item.slug.endsWith(firstCategories))[0]?.name || datos.categories[0].name;
 
-                showSection = <TitleSection name={titleMostViewed} tag="span" update_date={data?.update_date} href={slugSection} />;
-            }
+                // showSection = <TitleSection name={titleMostViewed} tag="span" update_date={data?.update_date} href={slugSection} />;
+            // }
 
             if (datos.tags && Object.keys(datos.tags) && Object.keys(datos.tags).length) {
                 const { tags } = datos;
@@ -206,7 +206,7 @@ const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, da
 
         showInternal = (
             <div className={style["main__content"]} id="interna_content">
-                {type!=='video' &&  showSection}
+                {/* {type!=='video' &&  showSection} */}
                 {type==='video' ? 
                 <>
                     {dataLiveIsFeatured && dataLiveIsFeatured.length > 0 ? (
@@ -223,7 +223,8 @@ const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, da
                     <h1 className={style["main__title"]}>{sharedTitle}</h1>
                     {showTeaser}
                     {showInterlinking}
-
+                    
+                    <div className={style["main__author--shared"]}>{showAuthor} <DateNote update_date={data?.update_date} /></div>
                     {dataLiveIsFeatured && dataLiveIsFeatured.length > 0 ? (
                         <LiveFeatured dataLiveIsFeatured={dataLiveIsFeatured} showImage={showImage} dataLive={liveBlogPosting?.live} />
                     ) : (
@@ -233,7 +234,6 @@ const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, da
 
                 <SlotAds type="Strip" data={adsPage?.ads?.data} />
                 <div className={style["content__author--btnshared"]}>
-                    <div className={style["main__author--shared"]}>{showAuthor}</div>
                     <div className={`${style["social-media-group"]} d-flex align-center`}>
                         <BtnShared type="facebook" data={data} variant="primary" />
                         <BtnShared type="whatsapp" data={data} variant="primary" />

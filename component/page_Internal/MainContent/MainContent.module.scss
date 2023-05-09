@@ -28,23 +28,23 @@
         }
     }
     .main__title {
-        color: $black;
+        color: $medium-gray;
         text-rendering: optimizeSpeed;
         letter-spacing: 0;
-        line-height: 30px;
+        line-height: 24px;
         font-weight: 700;
-        font-size: 28px;
+        font-size: 24px;
         padding: 8px 0;
     }
     .mainContent__teaser {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 400;
         letter-spacing: inherit;
-        line-height: 20px;
+        line-height: 16px;
         font-family: "Roboto", sans-serif;
         padding: 8px 0;
         a{
-            color:red;
+            color:$crimson;
             text-decoration: underline;
         }
     }
@@ -354,9 +354,9 @@
 
     @media (min-width: 780px) {
         .main__title {
-            font-size: 32px;
-            line-height: 34px;
-            color: $black;
+            font-size: 30px;
+            line-height: 30px;
+            color: $medium-gray;
         }
     }
 
