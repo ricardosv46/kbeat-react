@@ -1,0 +1,42 @@
+.liveIsFeatured__container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+.liveIsFeatured__date {
+    margin-right: 10px;
+}
+.liveIsFeatured__date span {
+    font-family: "Roboto", sans-serif;
+    display: inline-block;
+    padding: 8px;
+    background-color: #fe0404;
+    color: #fff;
+    border-radius: 3px;
+    line-height: 18px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+.liveIsFeatured__content {
+    font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+    margin-bottom: 5px;
+}
+.liveIsFeatured__content div,
+.liveIsFeatured__content p {
+    display: inline;
+}
+.liveIsFeatured__item {
+    margin: 5px 0;
+    display: inline;
+}
+.featuredlbp__headline {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+    font-family: "PT Serif", serif;
+}

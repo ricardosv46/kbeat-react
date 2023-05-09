@@ -1,0 +1,123 @@
+.container__sectionGrid {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px 0;
+}
+.listItem__container {
+  display: flex;
+  flex-direction: column;
+}
+.sectionGrid__head {
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  gap: 8px;
+  padding-bottom: 9px;
+  padding-top: 8px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.sectionGrid__head__title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.6rem;
+  color: #000;
+  margin: 0;
+}
+.sectionGrid__head__linkTo {
+  display: block;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-variant: all-small-caps;
+  font-size: 24px;
+  line-height: 1.6rem;
+  color: #8a64eb;
+  margin-top: 5px;
+  min-width: 72px;
+}
+.sectionGrid__head__separator {
+  background-color: #8a64eb;
+  height: 24px;
+  width: 2px;
+  display: block;
+  margin: 0;
+}
+.listItem__secondaryData {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 8px;
+}
+.listItem__container-secondaryCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 8px 0px;
+}
+.container__sectionGridSecondary {
+  margin-bottom: 16px;
+}
+.secondary__article {
+  position: relative;
+}
+.secondary__title {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+}
+.secondary__category {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  color: #1aba95;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 16px;
+  font-variant: all-small-caps;
+  margin: 0;
+}
+@media (min-width: 769px) {
+  .container__sectionGrid {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .listItem__container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .container__sectionGridPrimary {
+    width: 63%;
+  }
+  .container__sectionGridSecondary {
+    width: 35%;
+  }
+
+  .listItem__container-primaryCard {
+    width: 45%;
+  }
+  .listItem__container-secondaryCard {
+    width: 53%;
+    gap: 0px 16px;
+  }
+  .listItem__secondaryData {
+    gap: 8px;
+    max-height: 248px;
+  }
+}
+@media (min-width: 999px) {
+  .container__sectionGridPrimary {
+    width: calc(100% - 299px);
+  }
+  .container__sectionGridSecondary {
+    width: 283px;
+  }
+  .listItem__container-primaryCard {
+    width: 369px;
+  }
+  .listItem__container-secondaryCard {
+    width: calc(100% - 385px);
+  }
+}

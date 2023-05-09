@@ -1,0 +1,22 @@
+.contentElement__html {
+    position: relative;
+    overflow: hidden;
+    iframe {
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+.contentElement__flourish {
+    margin-bottom: 10px;
+}
+@media (min-width: 999px) {
+    .contentElement__html {
+        iframe {
+            width: 100%;
+            min-height: 365px;
+        }
+    }
+}

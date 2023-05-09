@@ -1,0 +1,32 @@
+@import "src/base/variables";
+.main__interlinking {
+    margin: 8px 0px 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: $crimson;
+
+    .interlinking__item {
+        line-height: 16px;
+        padding: 0 16px;
+        position: relative;
+        list-style: none;
+        &::before { 
+            content: "";
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: $crimson;
+        }
+        .interlinking__link {
+            font-size: 14px;
+            font-weight: 700;
+            color: $crimson;
+            line-height: 16px;
+        }
+    }
+}

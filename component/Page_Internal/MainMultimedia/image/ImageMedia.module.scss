@@ -1,0 +1,39 @@
+.imageInternalContainer {
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    :global(.image-internal__legend) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: #fff;
+        padding: 0 16px;
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 81px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 23.44%, #000000 100%);
+            z-index: 0;
+        }
+        span {
+            position: relative;
+            font-size: 12px;
+            display: block;
+            padding: 8px 0;
+            color: #fff;
+            z-index: 1;
+            border-top: 1px solid #fff;
+        }
+    }
+}

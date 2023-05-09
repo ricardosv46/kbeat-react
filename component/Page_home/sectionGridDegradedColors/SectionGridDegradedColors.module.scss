@@ -1,0 +1,62 @@
+.gridCards{
+  display: flex;
+  gap: 17.62px;
+  overflow: a;
+
+  figure{
+    width: 229px;
+    height: 325px;
+
+    img{
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      max-width: 229px;
+
+    }
+  }
+}
+
+.content_card_degraded{
+  position: relative;
+}
+
+.content_card_degraded::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.degraded_1:after{
+  background: linear-gradient(360deg, #8A64EB 8.77%, rgba(138, 100, 235, 0) 68%);
+}
+
+.degraded_2:after{
+  background: linear-gradient(360deg, #F11167 8.77%, rgba(241, 17, 103, 0) 68%);
+}
+.degraded_3:after{
+  background: linear-gradient(360deg, #E46EC2 8.77%, rgba(228, 110, 194, 0) 68%);
+}
+.degraded_4:after{
+  background: linear-gradient(360deg, #69DBF2 8.77%, rgba(105, 219, 242, 0) 68%);
+}
+
+.texto_degraded{
+  position: absolute;
+  z-index: 99;
+  bottom: 0;
+  left: 0;
+  color: white;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}

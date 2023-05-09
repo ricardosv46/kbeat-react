@@ -1,0 +1,43 @@
+@import "src/base/variables";
+
+.Moreseen__main {
+    width: 100%;
+    max-height: 425px;
+    background-color: #eeeeee;
+    overflow: auto;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+
+    p {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+        // max-height: 32px;
+        // overflow: hidden;
+    }
+
+    a {
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+// .Moreseen__main::-webkit-scrollbar {
+//     display: none;
+// }
+
+.Moreseen__subtitle {
+    color: $lr-red;
+    margin-top: 3px;
+}
+
+.Moreseen__container {
+    margin: 24px 0;
+}
