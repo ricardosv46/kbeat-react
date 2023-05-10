@@ -43,7 +43,7 @@ const Author = ({ data, amp,subText }) => {
                 return (
                     <a href={author.slug} itemProp="url" className={!amp ? style["author__redSocial_link"] : "author__redSocial_link"} key={key}>
                         <div className={!amp ? style["author__image"] : "author__image"}>{show_image}</div>
-                        {authorName}
+                        {subText}{authorName}
                     </a>
                 )
             })

@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import { TodayTopic } from '../TodayTopic/TodayTopic';
 
+const LogoLR = "/static/logo_kbeat.svg"
+
 const AmpLogo = (
     <amp-img 
         src="./static/logos/logo-LR.svg"
@@ -101,20 +103,21 @@ const HeaderAmp = ({data, topicsMenu}) => {
 
                 <header id="header" className="box-header">
                     <TodayTopic data={topicsMenu} type="amp"/>
-                    <div className="tem-lay-larepublica-header">
-                        <div className="larepublica-header__main c-both">
-                            <div className="cgrid-container" style={{position:'relative', height: '50px'}}>
+                    <div className="tem-lay-kbeat-header">
+                        <div className="kbeat-header__main c-both">
+                            <div className="cgrid-container" >
                                 <button className="hamburger" on='tap:sidebar1.toggle'>
                                     <span/>
                                     <span/>
                                     <span/>
                                 </button>
-                                <strong className="f-left larepublica-header-logo">
-                                    <a href="/"><amp-img alt="La Republica"
-                                                        src="https://cdn.larepublica.pe/images/content/default/logo-lr.svg"
-                                                        width="200"
-                                                        height="35"/></a>
+                                <strong>
+                                    <a href="/"><amp-img alt="Kbeat"
+                                                        src="/static/logo-kbeat.svg"
+                                                        width="177"
+                                                        height="59"/></a>
                                 </strong>
+                                <div style={{width:'20px'}}></div>
                             </div>
                         </div>
                     </div>
