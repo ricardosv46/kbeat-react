@@ -1,0 +1,29 @@
+.authors {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @media (min-width: 999px) {
+        flex-direction: row;
+    }
+
+    .authors__title {
+        font-family: "Roboto";
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 28px;
+        padding: 8px 0;
+    }
+    .main-authors {
+        width: 100%;
+        @media (min-width: 999px) {
+            width: calc(100% - 316px);
+        }
+    }
+}
+
+.authors__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 8px;
+}

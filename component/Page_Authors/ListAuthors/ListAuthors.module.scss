@@ -1,0 +1,10 @@
+.authors__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 8px;
+}
+.author__card {
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}

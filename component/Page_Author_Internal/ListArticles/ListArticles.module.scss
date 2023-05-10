@@ -1,0 +1,13 @@
+.list-articles {
+    max-width: 650px;
+    font-family: "roboto";
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 16px;
+    .article {
+        display: flex;
+        gap: 16px;
+        justify-content: flex-start;
+    }
+}
