@@ -1,0 +1,14 @@
+.wrapper__author {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @media (min-width: 999px) {
+        flex-direction: row;
+    }
+    .main__author {
+        width: 100%;
+        @media (min-width: 999px) {
+            width: calc(100% - 316px);
+        }
+    }
+}

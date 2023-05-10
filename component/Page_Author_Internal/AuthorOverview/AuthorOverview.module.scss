@@ -1,0 +1,108 @@
+@import 'src/base/variables';
+.author__card {
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+    border-radius: 0px 0px 5px 5px;
+    padding: 16px;
+    position: relative;
+}
+.author__card--wobackg:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -2px rgb(0 0 0 / 5%);
+    transform: translateY(-1px);
+}
+.back__gray {
+    background-color: #f4f4f4;
+
+}
+.author__head {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    .author__image {
+        border-radius: 5px;
+        border: 1px solid rgba(128, 128, 128, 0.2);
+        width: 120px;
+        height: 120px;
+        img {
+            border-radius: 5px;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease-out;
+        }
+    }
+    .author__info {
+        max-width: calc(100% - 130px);
+    }
+}
+
+.author__title {
+    color: $medium-gray;
+    font-size: 2.4rem;
+    line-height: 28px;
+    font-weight: 700;
+    margin: 9px 0;
+    text-decoration: none;
+    font-family: "Roboto";
+    margin-top: -1px;
+}
+.title__list {
+    cursor: pointer;
+}
+.author__social-networks {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    .wrapper__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+    }
+    .wrapper__icon-mail {
+        background-color: gray;
+    }
+    .wrapper__icon-web {
+        background-color: #83a1ed;
+    }
+    .wrapper__icon-twitter {
+        background-color: blue;
+    }
+    .wrapper__icon-rss {
+        background-color: orange;
+    }
+}
+
+.author__description {
+    margin-top: 2px;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 16px;
+    color: $black;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    margin-top: 8px;
+    span {
+        text-transform: uppercase;
+        color: red;
+        font-size: 1.4rem;
+        line-height: 16px;
+        cursor: pointer;
+    }
+}
+.author__description-desktop {
+    display: none;
+    @media (min-width: 980px) {
+        display: block;
+    }
+}
+.author__description-mobile {
+    display: block;
+    @media (min-width: 980px) {
+        display: none;
+    }
+}
