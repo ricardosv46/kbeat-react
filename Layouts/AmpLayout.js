@@ -5,6 +5,7 @@ import { AdsAnchorAMP } from "component/global/AdsAnchorAmp/AdsAnchorAmp";
 import { Schemas } from "component/global/Schemas/Schemas";
 import { Compass } from "component/Compass";
 import { Chartbeat } from "component/dataLayer/amp";
+import { FooterAmp } from "component/global/Footer/FooterAmp/FooterAmp";
 
 const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
     // console.log('>>> data layout - amp : ',data)
@@ -120,18 +121,18 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                 // Here css-component
                 .wrapper__quote {
                     position: relative;
-                    background-color: rgba(228, 228, 228, 0.2);
+                    background-color: rgba(232, 73, 95, 0.2);
                     padding: 14.5px 15px;
                     display: flex;
                     border-radius: 0px 0px 5px 5px;
                     border: 1px solid #e4e4e4;
-                    border-top: 3px solid #fe0404;
+                    border-top: 3px solid #E8495F;
                     margin-bottom: 24px;
                     margin-top: 8px;
                 }
                 .wrapper__quote blockquote p strong,
                 .wrapper__quote blockquote p b {
-                    color: #fe0404;
+                    color: #E8495F;
                     font-size: 14px;
                     font-weight: 700;
                     font-feature-settings: "smcp", "c2sc";
@@ -166,7 +167,7 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     flex-direction: column;
                 }
                 .author__redSocial_link {
-                    color: #666;
+                    color: #E8495F;
                     font-weight: 700;
                     text-decoration: none;
                     margin: 4px 0;
@@ -187,7 +188,7 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                 }
                 .main__interlinking {
                     margin: 8px 0px 16px 0;
-                    border-left: 3px solid #fe0404;
+                    border-left: 3px solid #E8495F;
                     display: flex;
                     flex-direction: column;
                     gap: 5px;
@@ -195,7 +196,7 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     list-style: none;
                 }
                 .content__interlinking {
-                    color: #fe0404;
+                    color: #E8495F;
                     list-style: none;
                     font-size: 18px;
                 }
@@ -206,7 +207,7 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                 .interlinking__link {
                     font-size: 14px;
                     font-weight: 700;
-                    color: #fe0404;
+                    color: #E8495F;
                     line-height: 16px;
                 }
                 .mainContent__tags_list {
@@ -233,10 +234,10 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     text-transform: uppercase;
                     font-weight: 700;
                     font-variant: all-small-caps;
-                    border-right: 1px solid #fe0404;
+                    border-right: 1px solid #E8495F;
                 }
                 .tags-item-link {
-                    color: #fe0404;
+                    color: #E8495F;
                     font-size: 14px;
                     padding-right: 10px;
                     margin: 5px 0 5px 10px;
@@ -330,10 +331,17 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                 .content-page {
                     width: 100vw;
                 }
-                .tem-lay-larepublica-header {
-                    background-color: red;
+                .tem-lay-kbeat-header {
+                    background: linear-gradient(270deg, #4695E3 0%, #F200CC 100%);
+                    
                 }
-                .larepublica-header__main {
+                .cgrid-container{
+                    height:80px;
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                }
+                .kbeat-header__main {
                     max-width: 600px;
                     margin: 0 auto;
                 }
@@ -342,10 +350,8 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     height: 27px;
                     border: none;
                     font-size: 0;
-                    position: absolute;
                     margin-left: 15px;
-                    vertical-align: super;
-                    padding: 0;
+
                     top: 20%;
                     background-color: transparent;
                 }
@@ -360,42 +366,43 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                 }
                 .hamburger span {
                     display: block;
-                    position: absolute;
                     border-radius: 16px;
                     height: 2px;
-                    width: 52%;
                     background-color: #fff;
                     opacity: 1;
                     transform: rotate(0);
                     transition: 0.25s ease-in-out;
                     transform-origin: left center;
-                    left: 0;
-                    right: 0;
-                    margin: auto;
+                    margin-top:4px;
                 }
-                .larepublica-header-logo {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
+                .kbeat-header-logo {
+                    
                 }
                 .container__amp-internal {
                     max-width: 550px;
                     margin: 0 auto auto;
-                    padding: 0 10px;
+                    padding: 0 16px;
                 }
                 .internalBadge {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    font-size: 14px;
                     box-sizing: border-box;
-                    margin: 8px 0;
-                    border-top: 1px solid #e4e4e4;
-                    border-bottom: 1px solid #e4e4e4;
+                    margin: 16px 0 ;
+                    border-top: 1px solid #E8495F;
+                    border-bottom: 1px solid #E8495F;
                     padding: 8px 0;
-                    font-family: "PT Serif", serif;
+                    
+                }
+                .internalBadge a {
+                    font-size: 24px;
+                    line-height:28px;
+                    font-family: "Roboto", serif;
                     text-transform: uppercase;
+                    font-weight: 700;
+                    color: #333333;
+
+                    
                 }
                 .comp__badges {
                     font-weight: 700;
@@ -417,31 +424,33 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     color: #666;
                 }
                 .title__internal {
-                    font-size: 32px;
-                    line-height: 30px;
+                    font-size: 24px;
                     margin: 0.5rem 0;
                     letter-spacing: 0;
                     font-weight: 700;
-                    font-family: "PT Serif", serif;
-                    color: #000;
                     text-rendering: optimizespeed;
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-size: 24px;
+                    line-height: 24px;
+                    color: #333333;
                 }
                 .teaser__internal {
-                    font-size: 16px;
+                    font-size: 14px;
                     font-weight: 400;
                     letter-spacing: inherit;
-                    line-height: 20px;
+                    line-height: 16px;
                     font-family: Roboto, sans-serif;
                     padding: 8px 0;
                     margin: 0;
-                    color: #333;
+                    color: #000;
                 }
                 .teaser__internal p {
                     margin: 0;
                 }
                 .teaser__internal a {
                     text-decoration: underline;
-                    color: #fe0404;
+                    color: #E8495F;
                 }
                 .container__legend-internal {
                     background-color: hsla(0, 0%, 90.2%, 0.658824);
@@ -542,7 +551,7 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     font-weight: 400;
                 }
                 .container__body-amp p a {
-                    color: #fe0404;
+                    color: #E8495F;
                     text-decoration: underline;
                     overflow-wrap: break-word;
                 }
@@ -591,7 +600,7 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     border-radius: 50%;
                     width: 5px;
                     height: 5px;
-                    background-color: #fe0404;
+                    background-color: #E8495F;
                     position: absolute;
                     top: 50%;
                     left: 1rem;
@@ -670,7 +679,7 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     width: 50%;
                 }
                 .comp-live-posting_text-time span {
-                    background: #fe0404;
+                    background: #E8495F;
                     padding: 8px;
                     border-radius: 3px;
                     color: #eee;
@@ -680,7 +689,7 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                 .comp-live-posting_text-date {
                     width: 50%;
                     text-align: right;
-                    color: #fe0404;
+                    color: #E8495F;
                     font-weight: 700;
                     font-size: 14px;
                 }
@@ -717,7 +726,7 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                 .liveIsFeatured__date span {
                     display: inline-block;
                     padding: 8px;
-                    background-color: #fe0404;
+                    background-color: #E8495F;
                     color: #fff;
                     border-radius: 3px;
                     line-height: 18px;
@@ -748,7 +757,7 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                 }
                 .mainContent__live-content {
                     background: #fff8fc;
-                    border: 0.5px solid #fe0404;
+                    border: 0.5px solid #E8495F;
                     border-radius: 5px;
                     padding: 8px;
                 }
@@ -758,7 +767,7 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     margin: 8px 0 12px 0;
                 }
                 .mainContent__live-title h2 {
-                    color: #fe0404;
+                    color: #E8495F;
                     font-size: 14px;
                     margin-left: 12px;
                     line-height: 16px;

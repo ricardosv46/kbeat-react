@@ -119,10 +119,10 @@ const Header = (props) => {
         <img
             className={style["logo-kbeat"]}
             src={LogoLR}
-            alt="Últimas Noticias del Perú y el Mundo en larepublica.pe"
-            title="La República"
-            width="100%"
-            height="100%"
+            alt="Últimas Noticias del Perú y el Mundo en kbeat.pe"
+            title="Kbeat"
+            width="177"
+            height="59"
         />
     );
 

@@ -43,6 +43,7 @@
         line-height: 16px;
         font-family: "Roboto", sans-serif;
         padding: 8px 0;
+        color: #000;
         a{
             color:$crimson;
             text-decoration: underline;
@@ -374,7 +375,6 @@
         line-height: 12px;
         font-weight: 700;
         color: $medium-dark-gray;
-        display: none;
 
         @include min768p {
             display: inline-block;

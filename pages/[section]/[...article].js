@@ -112,11 +112,11 @@ const Internal = (props) => {
                 <aside className="col__content offset-300">
                     
                     <SlotAds type="Middle" data={adsPage?.ads?.data} />
-                    <div className="desktop-visible">
+                    {/* <div className="desktop-visible">
                         <Moreseen title="Te puede interesar" data={interestList} />
-                    </div>
+                    </div> */}
                     <div className="content_Moreseen">
-                        <Moreseen data={analyticsInternal} />
+                        <Moreseen title="LO ÚLTIMO" data={analyticsInternal} />
                     </div>
 
                     {/* <RecommendedNotesByBrand data={recommendedNotesByBrand} /> */}
