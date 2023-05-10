@@ -45,6 +45,7 @@ const MainMultimedia = ({
                 .multimedia-container {
                     background: #ddd;
                     position: relative;
+                    margin:0 -16px;
                     padding-top: ${paddingDiv}%;
                     border-radius: 5px;
                     overflow: hidden;

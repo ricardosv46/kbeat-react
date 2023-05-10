@@ -117,6 +117,12 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                 button {
                     padding: 0;
                 }
+                .container_author_time{
+                    display:flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom:16px;
+                }
 
                 // Here css-component
                 .wrapper__quote {
@@ -338,8 +344,13 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                 .cgrid-container{
                     height:80px;
                     display:flex;
+                    padding:0 16px;
                     justify-content:space-between;
                     align-items:center;
+                }
+                .cgrid-container div{
+                    height:20px;
+                    width:20px;
                 }
                 .kbeat-header__main {
                     max-width: 600px;
@@ -350,9 +361,6 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     height: 27px;
                     border: none;
                     font-size: 0;
-                    margin-left: 15px;
-
-                    top: 20%;
                     background-color: transparent;
                 }
                 .hamburger span:first-of-type {
@@ -706,6 +714,9 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     position: relative;
                     width: 100%;
                     margin: 8px 0;
+                }
+                amp-img{
+                    margin: 0 -16px;
                 }
                 .comp-live-posting_content amp-img {
                     width: 100%;

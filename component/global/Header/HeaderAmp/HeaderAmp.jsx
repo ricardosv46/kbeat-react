@@ -117,7 +117,7 @@ const HeaderAmp = ({data, topicsMenu}) => {
                                                         width="177"
                                                         height="59"/></a>
                                 </strong>
-                                <div style={{width:'20px'}}></div>
+                                <div></div>
                             </div>
                         </div>
                     </div>

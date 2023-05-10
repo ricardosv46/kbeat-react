@@ -170,8 +170,8 @@ const InternaAmp = (props) => {
                     );
                 }
                 // console.log("data.authors-----------",data.authors)
-                showAuthor = <div>
-                                <Author amp={true} data={article} />
+                showAuthor = <div className="container_author_time">
+                                <Author amp={true} data={article} subText='Por: '/>
                                 <time dateTime={convertirFecha(author__date?.split(" ").join("T"), "iso-2")} className="author__date">
                                     {convertirFecha(author__date?.split(" ").join("T"), "short")}
                                 </time>
@@ -236,7 +236,7 @@ const InternaAmp = (props) => {
                                 <amp-carousel width="500" height="294" layout="responsive" controls type="slides">
                                     {typeImg.map((item, key) => {
                                         return (
-                                            <div className="larepublica-carousel-img" key={`item-carousel-amp-${key}`}>
+                                            <div style={{margin:'0 -16px'}} className="larepublica-carousel-img" key={`item-carousel-amp-${key}`}>
                                                 <amp-img
                                                     src={newResize.resizeWapa(item?.path || process.env.IMAGE_DEFAULT_1250x735, 500, 294)}
                                                     width="500"
