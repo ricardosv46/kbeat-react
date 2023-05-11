@@ -223,14 +223,15 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                 }
                 .mainContent__tags-list {
                     padding-left: 8px;
+                    border-top: 1px solid #000;
                 }
                 .mainContent__tags-list:before {
                     content: "Temas";
-                    font-family: "PT Serif", serif;
+                    font-family: "Roboto", serif;
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 18px;
-                    line-height: 22px;
+                    font-size: 20px;
+                    line-height: 18px;
                     margin-right: 10px;
                 }
                 .tags-item__internal {
@@ -240,7 +241,7 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     text-transform: uppercase;
                     font-weight: 700;
                     font-variant: all-small-caps;
-                    border-right: 1px solid #E8495F;
+                    border-left: 1px solid #E8495F;
                 }
                 .tags-item-link {
                     color: #E8495F;
@@ -248,9 +249,9 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     padding-right: 10px;
                     margin: 5px 0 5px 10px;
                 }
-                .tags-item__internal:last-child {
-                    border: none;
-                }
+                // .tags-item__internal:last-child {
+                //     border: none;
+                // }
                 //-----box header---
                 .amp__sidebar {
                     background-color: #333;
@@ -552,8 +553,8 @@ const AmpLayout = ({ children, data, dataSchema, sectionName,title }) => {
                     line-height: 22px;
                 }
                 .container__body-amp p {
-                    font-size: 16px;
-                    line-height: 1.6;
+                    font-size: 14px;
+                    line-height: 18px;
                     margin-bottom: 1rem;
                     margin-top: 0;
                     font-weight: 400;
