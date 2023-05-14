@@ -437,6 +437,7 @@ const InternaAmp = (props) => {
 
     const socialMedia = (
         <div className="shared__container">
+            <p className="compatir">Compartir: </p>
             <amp-social-share className="shared__fb" type="facebook" data-param-app_id="489210501129201" height="35" width="35" />
             <amp-social-share
                 className="shared__wsp"
