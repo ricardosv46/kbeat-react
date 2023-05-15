@@ -20,8 +20,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 177px;
+    a { width: 177px;
     height: 59px;
+}
 
 }
 .logo-header-search{
@@ -55,6 +56,7 @@
 }
 .container-color {
     padding:0 16px;
+    height: 80px;
 }
 .logo-kbeat {
     width: 177px;
@@ -154,11 +156,6 @@
     .btn-sandwich {
         width: 38px;
         height: 38px;
-    }
-}
-@media (min-width: 540px) and (max-width: 999px) {
-    .container-color {
-        height: 80px;
     }
 }
 

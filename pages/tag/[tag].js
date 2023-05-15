@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import WithSection from "hocs/withSection";
 import { Layout } from "Layouts/Layouts";
+import { useRouter } from "next/router";
 import { Spotlight } from "component/Page_Section/Spotlight/Spotlight";
 // import { ListSmallSection } from "component/Page_Section/ListSmallSection/ListSmallSection";
 import { ListSection } from "component/Page_Section/ListSection/ListSection";
@@ -11,11 +12,14 @@ import { SlotAds } from "component/global/AdsManager/SlotAds";
 import { ShowMoreButton } from "component/global/ShowMoreButton/ShowMoreButton";
 import { Taboola } from "component/global/Taboola";
 import { Moreseen } from "component/global/Moreseen/Moreseen";
+import WithTag from "hocs/withTag";
+import { TagAboutContent } from "component/Page_Tag/TagAboutContent";
+import { TagRelatedContent } from "component/Page_Tag/TagRelatedContent";
 
 export const Section = (props) => {
     const {
-        section_data,
-        section_about,
+        tag_data,
+        tag_about,
         analyticsSeccion,
         adsPage,
         footerMenu,
@@ -25,20 +29,21 @@ export const Section = (props) => {
         article,
         portada,
     } = props;
+
     const limit = 24;
-    const sectionArticles = section_data?.articles?.data.slice(0, limit) || [];
+    const sectionArticles = tag_data?.articles?.data.slice(0, limit) || [];
     const [dataSection, setDataSection] = useState(sectionArticles);
     const [lastPage, setLastPage] = useState(sectionArticles.length < limit);
     const [numPage, setNumPage] = useState(1);
     const [loading, setLoading] = useState(false);
-    let titleSection = null;
     let dataSpotlight = null;
-    let dataGrid = null;
     let dataList;
-    let interlinking = null;
-    let isDataSubMnu = false;
-    const dataPortada = portada?.spotlight?.data?.item;
-    const section = section_about.category.slug.replace("/", "")
+    const section = tag_about.tag.slug.replace("/", "")
+    let descriptionTag = null;
+    let extraTag = null;
+    let imageTag = null;
+    let tagRelated = null;
+    let titleTag = null;
 
     const handler =() => {
         const num = numPage + 1
@@ -47,7 +52,7 @@ export const Section = (props) => {
     useEffect(async () => {
         if (numPage > 1) {
             setLoading(true);
-            const params = { category_slug: section, limit, page: numPage, order_by: "update_date" };
+            const params = { tag_slug: tag_about.tag.slug.replace("/tag/", ""), limit, page: numPage, order_by: "update_date" };
             let newData = await fetchApi("articles", params);
             let data = newData?.articles?.data
             setLastPage(data.length < limit)
@@ -61,41 +66,8 @@ export const Section = (props) => {
         return () => null
     }, [numPage])
 
-    interlinking = <div style={{ padding: "10px" }}></div>;
 
-    if (spotlight_general && Object.keys(spotlight_general) && Object.keys(spotlight_general).length) {
-        const { spotlight } = spotlight_general;
-
-        if (spotlight && Object.keys(spotlight) && Object.keys(spotlight).length) {
-            const { data } = spotlight;
-
-            if (data && Object.keys(data) && Object.keys(data).length) {
-                const { section_item_link } = data;
-
-                let dataSubMenu = section_item_link?.filter((submenuItem) => submenuItem.section[0].slug === "/" + section);
-                isDataSubMnu = dataSubMenu?.length > 0 ? true : false;
-                // interlinking = isDataSubMnu ? <InterlinkingSection data={dataSubMenu} /> : <div style={{ padding: "10px" }}></div>;
-            }
-        }
-    }
-
-    if (section_about && Object.keys(section_about) && Object.keys(section_about).length > 0) {
-        if (section_about && Object.keys(section_about) && Object.keys(section_about).length > 0) {
-            if (section_about?.category?.name && section_about.category.name.length > 0) {
-                titleSection = (
-                    <TitleSection
-                        // name={
-                        //     `ÚLTIMAS NOTICIAS SOBRE ${section_about.category.name}`
-                        // }
-                        name={
-                            `${section_about.category.name}`
-                        }
-                        tag="h1"
-                    />
-                );
-            }
-        }
-        if (dataSection && Object.keys(dataSection) && Object.keys(dataSection).length > 0 && !dataPortada) {
+        if (dataSection && Object.keys(dataSection) && Object.keys(dataSection).length > 0) {
             const firstItem = dataSection.slice(0, 1)[0];
             const imageItem =
                 firstItem?.data?.multimedia?.find((media) => media.type === "image")?.path ||
@@ -107,20 +79,38 @@ export const Section = (props) => {
                 title: firstItem?.title,
             };
 
-            dataGrid = dataSection.slice(1, 6);
-            dataList = dataSection.slice(6, dataSection.length);
+            // dataGrid = dataSection.slice(1, 6);
+            dataList = dataSection.slice(1, dataSection.length);
         }
 
-        if (dataSection && Object.keys(dataSection) && Object.keys(dataSection).length > 0 && dataPortada && dataPortada?.length > 0) {
-            const newData = [...dataPortada, ...dataSection];
-            const firstItem = newData.slice(0, 1)[0];
-            dataSpotlight = {
-                image: firstItem?.image?.url || process.env.IMAGE_DEFAULT_1250x735,
-                slug: firstItem?.url,
-                title: firstItem?.title,
-            };
-            dataGrid = newData.slice(1, 6);
-            dataList = newData.slice(6, newData.length);
+    if (tag_about && Object.keys(tag_about) && Object.keys(tag_about).length) {
+        const { tag } = tag_about;
+
+        if (tag?.name && tag?.name?.length > 0) {
+            titleTag = tag.name;
+        }
+
+        if (tag?.data && Object.keys(tag?.data) && Object.keys(tag?.data).length) {
+            const { data } = tag;
+
+            if (data.description && data.description.length > 0) {
+                descriptionTag = data.description;
+            }
+
+            if (data.multimedia && data.multimedia.length > 0) {
+                imageTag = data.multimedia.find(media => media.type == "image").path;
+            }
+
+            if (data.extra && Object.keys(data.extra) && Object.keys(data.extra).length) {
+                extraTag = data.extra;
+            }
+
+            if (data.related && Object.keys(data.related) && Object.keys(data.related).length) {
+                const { tags } = data.related;
+                if (tags.length > 0) {
+                    tagRelated = tags
+                }
+            }
         }
     }
 
@@ -129,12 +119,17 @@ export const Section = (props) => {
             dataHeader={mainMenu}
             dataFooter={footerMenu}
             topicMenu={topicsMenu}
-            prebid={"SECTION"}
+            prebid={"TAG"}
             adsPage={adsPage}
-            data={section_about?.category}
-            listNote={section_data?.articles?.data || []}
+            data={tag_about?.tag}
+            listNote={tag_data?.articles?.data || []}
         >
-            {titleSection}
+            <TitleSection name={`Últimas noticias sobre ${titleTag}`} tag="h1" />
+            <TagAboutContent
+                imageTag={imageTag}
+                titleTag={titleTag}
+                descriptionTag={descriptionTag}
+            />
             {/* {interlinking} */}
             <div className="container__columns">
                 <article className="col__content">
@@ -146,7 +141,7 @@ export const Section = (props) => {
                 </article>
 
                 <article className="col__content offset-300">
-                    {/* <ListSmallSection data={dataGrid} /> */}
+                    <TagRelatedContent data={{ tagRelated, extraTag }} />
                     <SlotAds type="Middle" data={adsPage?.ads?.data} />
                     <Moreseen data={analyticsSeccion} />
                     <SlotAds type={"Middle2_Right"} data={adsPage?.ads?.data} />
@@ -156,4 +151,4 @@ export const Section = (props) => {
     );
 };
 
-export default WithSection(Section);
+export default WithTag(Section);
