@@ -1,0 +1,32 @@
+@import 'src/base/variables';
+.pageError__container {
+    text-align: center;
+    margin-top: 82px;
+    h1 {
+        font-family: PT serif;
+        color: $medium-gray;
+        font-weight: bolder;
+        font-size: 3em;
+        margin-bottom: 10px;
+        line-height: 1;
+    }
+    h2 {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    a {
+        color: #ff0102;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    img {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+}

@@ -30,21 +30,22 @@ const ItemSection = ({ data }) => {
 
     return (
 
-    <article className={`${styles["mediumCard__container"]} extend-link--outside`}>
+    <article className={`${styles["mediumCard__container"]}`}>
 
         <figure className={`${styles["itemSection__image"]} ${isVideo ? styles["video-type"] : ""}`} >
             <Image 
                 data={image} 
                 resize={resizeImage} 
                 title={categoryTitle || ''} 
-            />              
+            />
+            <div className={`${styles["degraded-image"]} extend-link-outside`}></div>              
         </figure>
       
-        {categoryTitle && 
+        {/* {categoryTitle && 
             <h3 className={styles["itemSection__section"]}>
-                 <a  style={{color:'#b22843'}} href={categorySlug}>{categoryTitle}</a>
+                 <a  style={{color:'#F101CC'}} href={categorySlug}>{categoryTitle}</a>
             </h3>
-        }
+        } */}
         
         <h2 className={styles["itemSection__title"]}>
             <a href={slug} className="extend-link">{sectionName}</a>

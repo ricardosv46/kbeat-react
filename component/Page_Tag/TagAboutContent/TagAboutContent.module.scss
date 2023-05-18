@@ -39,7 +39,7 @@
         margin-bottom: 12px;
     }
     li {
-        border-left: solid 2px #FE0404;
+        border-left: solid 2px #F200CC;
         padding-left: 8px;
         display: block;
         &:not(:last-child) {
@@ -47,7 +47,7 @@
         }
         font-weight: bold;
         font-size: 14px;
-        font-family: "PT Serif";
+        font-family: "Roboto",sans-serif;
     }
 
     margin-bottom: 16px;
@@ -56,12 +56,12 @@
 .tagInfo__extra {
     strong{
         font-size: 1.75em;
-        font-family: "PT Serif";
+        font-family: "Roboto",sans-serif;
         margin-bottom: 12px;
         display: block;
     }
     li {
-        border-left: solid 2px #FE0404;
+        border-left: solid 2px #F200CC;
         padding-left: 8px;
         display: block;
         &:not(:last-child) {

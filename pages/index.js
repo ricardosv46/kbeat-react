@@ -25,7 +25,9 @@ const Home = (props) => {
 
 
             <div className='container__columns'>
+                    <article className='col__content'>
                     <SectionGridLastNews data={newsLast} /> 
+                    </article>
                 <article className='col__content offset-300'>
                     <SlotAds type={"Middle"} data={adsPage?.ads?.data} />
                 </article>

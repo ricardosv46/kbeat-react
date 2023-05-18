@@ -433,21 +433,21 @@ const Layout = (props) => {
                 ) : (
                     <link rel="canonical" href={`${process.env.SITE_DOMAIN_URL}/pagina-no-encontrada`} />
                 )}
+                <AdsManager data={data} dataAds={adsPage?.ads?.data} showMediaKit={showMediaKit} />
                 <CookielessTagTeads />
                 <script dangerouslySetInnerHTML={{ __html: `window.PAGE = '${prebid && typeof prebid === "string" ? prebid : ""}'` }} />
                 <script defer src="https://cdn.unblockia.com/h.js" />
-                <AdsManager data={data} dataAds={adsPage?.ads?.data} showMediaKit={showMediaKit} />
             </NextHead>
             <InitAdsManager />
             <Compass articleData={data?.type === "article" && data} />
             {showSchemaData}
-            {/* <SlotAds type="Interstitial" data={adsPage?.ads?.data} /> */}
+            <SlotAds type="Interstitial" data={adsPage?.ads?.data} />
             <div className="bl-Ads">
-                {/* <SlotAds type="Sticky" data={adsPage?.ads?.data} />
+                <SlotAds type="Sticky" data={adsPage?.ads?.data} />
                 <SlotAds type="Floating" data={adsPage?.ads?.data} />
                 <SlotAds type="Floating2" data={adsPage?.ads?.data} />
                 <SlotAds type="Lateral_Left" data={adsPage?.ads?.data} />
-                <SlotAds type="Lateral_Right" data={adsPage?.ads?.data} /> */}
+                <SlotAds type="Lateral_Right" data={adsPage?.ads?.data} />
             </div>
             {/* <Header
                 refBtnSearch={refBtnSearch}

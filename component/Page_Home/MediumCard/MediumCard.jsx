@@ -24,8 +24,8 @@ const MediumCard = ({
     <h3
       className={` ${styles["mediumCard__section"]}`}
       style={{
-        color: typeTitle === 1 ? colorSection(sectionName) : "white",
-        backgroundColor: typeTitle === 2 ? colorSection(sectionName) : "white",
+        color:  "white",
+        backgroundColor:  '#F101CC',
       }}
     >
       {sectionName}

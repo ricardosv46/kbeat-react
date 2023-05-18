@@ -38,15 +38,7 @@ const AmpSlotAds = ({ data, type, section }) => {
                         </amp-sticky-ad>
                     )) ||
                     (type == "amp_Videoinread" && (
-                        <amp-ad 
-                            width="1" 
-                            height="1" 
-                            type="sunmedia" 
-                            layout="responsive" 
-                            data-cid="312b88c6-a581-4be5-956c-eecaa6d29b47" 
-                            data-html-access-allowed="true" 
-                            data-block-on-consent="_till_responded">
-                        </amp-ad>
+                        <amp-ad width="300" height="1" type="teads" data-pid="91277" layout="responsive" />
                     ))
                     || (
                         <amp-ad

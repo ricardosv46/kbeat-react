@@ -24,8 +24,8 @@ const SectionGridDegradedColors = ({ data }) => {
 
       return <figure className={`${styles["content_card_degraded"]} ${styles[colorsDegraded]}`}>
         <img
-          // src={newResize.resizeWapa(urlImage, 229, 325)}
-          src={urlImage}
+          src={newResize.resizeWapa(urlImage, 229, 325)}
+          // src={urlImage}
           decoding="async"
           alt={item?.title}
           title={item?.title}

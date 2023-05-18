@@ -1,9 +1,10 @@
 import "src/global.scss";
 import fetchApi from "services/api/fetchApi";
+import { PageError } from "component/Page_Error";
 
 function MyApp({ Component, pageProps }) {
     if (pageProps.error) {
-        return <div>error</div>
+        return <PageError {...pageProps} />
     }
     return <Component {...pageProps} />;
 }
