@@ -13,6 +13,11 @@
     border-radius: 4px;
 }
 
+.item-social-36{
+    width: 36px;
+    height: 36px;  
+}
+
 .primary {
     background-color: $medium-gray;
     color: $white;
@@ -48,4 +53,9 @@
 
 .bg-googlenews{
     background-color: #FFFFFF;
+}
+
+.bg-share{
+    background-color: #8A64EB;
+    border-color: #8A64EB;
 }

@@ -467,6 +467,7 @@ const Layout = (props) => {
                 topicData={topicMenu}
                 setShowSearch={setShowSearch}
                 showSearch={showSearch}
+                data={data}
                 internal={internal}
                 type={meta_type} /> 
             {/* <InputSearch refBtnSearch={refBtnSearch} showSearch={showSearch} /> */}

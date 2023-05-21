@@ -74,6 +74,7 @@
         margin: 8px 0 24px 0;
         @media (min-width: 999px) {
             flex-direction: row;
+            display: none;
         }
     }
     .main__author--shared {

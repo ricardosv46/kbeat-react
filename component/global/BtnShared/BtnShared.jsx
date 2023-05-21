@@ -9,32 +9,36 @@ import style from "component/global/BtnShared/BtnShared.module.scss";
 
 
 
-const socialMedia = {
-    facebook: {
-        label: "compartir la nota por facebook",
-        href: slug => `https://www.facebook.com/sharer.php?u=${slug}`,
-        component: <IconFacebook height="15" width="15" />,
-        text: ""
-    },
-    twitter: {
-        href: (slug, title) => `https://twitter.com/intent/tweet?text=${encodeURI(title)} ${slug}&via=${process.env.SITE_TWITTER_ACCOUNT}`,
-        label: "compartir la nota por twitter",
-        component: <IconTwitter height="15" width="15" />,
-        text: ""
-    },
-    whatsapp: {
-        href: (slug, title) => `https://api.whatsapp.com/send?p&text=${encodeURI(title)} ${slug}`,
-        label: "compartir la nota por whatsapp",
-        component: <IconWhatsapp height="15" width="15" />,
-        text: ""
-    },
-    googlenews: {
-        href: () => process.env.SITE_NEWS_GOOGLE,
-        component: <IconGoogleNews height="17" width="17"/>,
-        text: "Siguenos en Google News"
-    }
-};
-const BtnShared = (props) => {
+
+const BtnShared = (props,header=false) => {
+
+
+    const socialMedia = {
+        facebook: {
+            label: "compartir la nota por facebook",
+            href: slug => `https://www.facebook.com/sharer.php?u=${slug}`,
+            component: <IconFacebook height={header ? 20 : 15} width={header ? 20 : 15} />,
+            text: ""
+        },
+        twitter: {
+            href: (slug, title) => `https://twitter.com/intent/tweet?text=${encodeURI(title)} ${slug}&via=${process.env.SITE_TWITTER_ACCOUNT}`,
+            label: "compartir la nota por twitter",
+            component: <IconTwitter height={header ? 20 : 15} width={header ? 20 : 15} />,
+            text: ""
+        },
+        whatsapp: {
+            href: (slug, title) => `https://api.whatsapp.com/send?p&text=${encodeURI(title)} ${slug}`,
+            label: "compartir la nota por whatsapp",
+            component: <IconWhatsapp height={header ? 20 : 15} width={header ? 20 : 15} />,
+            text: ""
+        },
+        googlenews: {
+            href: () => process.env.SITE_NEWS_GOOGLE,
+            component: <IconGoogleNews height="17" width="17"/>,
+            text: "Siguenos en Google News"
+        }
+    };
+
     const { type = "", data = {}, variant = "" } = props;
     const cssNameModule = style[variant];
 
@@ -50,7 +54,7 @@ const BtnShared = (props) => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={socialMedia[type]["label"]}
-        className={`${style["item-social"]} ${style[`bg-${type}`]} ${cssNameModule}`}>
+        className={`${style["item-social"]} ${header ? style[`bg-share`] : style[`bg-${type}`]} ${header ? style[`item-social-36`] : ''} ${cssNameModule}`}>
             {socialMedia[type]["component"]}
             {socialMedia[type]["text"]}
     </a>

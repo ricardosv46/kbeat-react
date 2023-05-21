@@ -214,15 +214,17 @@ const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, da
                     ) : (
                         showImage
                     )}
+                    <h1 className={style["main__title"]}>{sharedTitle}</h1>
                     {showTeaser}
                     {showInterlinking}
 
                 </>   :
                 <>
-                    {/* <h1 className={style["main__title"]}>{sharedTitle}</h1> */}
+                    <h1 className={style["main__title"]}>{sharedTitle}</h1>
                     {showTeaser}
-                    {/* {showInterlinking} */}
+                    {showInterlinking}
 
+                    <div className={style["main__author--shared"]}>{showAuthor} <DateNote update_date={data?.update_date} /></div>
                     {dataLiveIsFeatured && dataLiveIsFeatured.length > 0 ? (
                         <LiveFeatured dataLiveIsFeatured={dataLiveIsFeatured} showImage={showImage} dataLive={liveBlogPosting?.live} />
                     ) : (
@@ -230,17 +232,15 @@ const MainContent = ({type, data, interlinkingData, liveBlogPosting, adsPage, da
                     )}
                 </> }
 
-                <div className={style["main__author--shared"]}>{showAuthor} <DateNote update_date={data?.update_date} /></div>
-
                 <SlotAds type="Strip" data={adsPage?.ads?.data} />
-                {/* <div className={style["content__author--btnshared"]}>
+                <div className={style["content__author--btnshared"]}>
                     <div className={`${style["social-media-group"]} d-flex align-center`}>
                         <BtnShared type="facebook" data={data} variant="primary" />
                         <BtnShared type="whatsapp" data={data} variant="primary" />
                         <BtnShared type="twitter" data={data} variant="primary" />
                         <BtnShared type="googlenews" data={data} variant="label"/>
                     </div>
-                </div> */}
+                </div>
                 <div className={style["main__body"]}>{showContent}</div>
                 <ul className={style["mainContent__tags-list"]}>{showTags}</ul>
             </div>

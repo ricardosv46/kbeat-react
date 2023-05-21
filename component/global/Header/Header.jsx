@@ -5,13 +5,14 @@ import { SlotAds } from "../AdsManager/SlotAds";
 import { InputSearch } from "component/global/InputSearch/InputSearch";
 import style from "component/global/Header/Header.module.scss"
 import { Networks } from "component/global/Header/Networks/Networks";
+import { BtnShared } from "../BtnShared/BtnShared";
 
 const LogoLR = "/static/logo-kbeat.svg";
 
 let styleMenuFixed = {};
 
 const Header = (props) => {
-    const { mainData, topicData, adsPage, hideAdTop, setShowSearch, showSearch, refBtnSearch, internal, type } = props;
+    const { mainData, topicData, adsPage, hideAdTop, setShowSearch, data, showSearch, refBtnSearch, internal, type } = props;
 
     const [state, setState] = useState({
         items: null,
@@ -223,7 +224,11 @@ const Header = (props) => {
                                     <span className={style["btn-sandwich_span"]} />
                                     <span className={style["btn-sandwich_span"]} />
                                 </button>
-                                {!state.showFixMenu && <Networks/>}
+                                {!state.showFixMenu ? <Networks/> : internal ? <>
+                                <BtnShared type="facebook" data={data} variant="primary" header />
+                                <BtnShared type="whatsapp" data={data} variant="primary" header/>
+                                <BtnShared type="twitter" data={data} variant="primary" header/>
+                                </>:<></>}
                             </div>
                             <div className={style["logo-header-kbeat"]} >
                                 <a
