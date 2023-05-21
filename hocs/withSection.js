@@ -1,5 +1,4 @@
 import fetchApi from "services/api/fetchApi";
-import { portadas } from "util/portadas";
 
 const WithSection = (WrapperComponent) => {
     const hocComponent = ({ ...props }) => <WrapperComponent {...props} />;
@@ -14,7 +13,6 @@ const WithSection = (WrapperComponent) => {
                 slug: section,
             });
         if (section_about.category) {
-            // const idPortada = portadas[section];
 
             // const spotlight_general = await fetchApi("spotlight", {
             //     id: "61f9538bcae98460f475007a",

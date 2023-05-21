@@ -11,6 +11,7 @@ import { SlotAds } from "component/global/AdsManager/SlotAds";
 import { ShowMoreButton } from "component/global/ShowMoreButton/ShowMoreButton";
 import { Taboola } from "component/global/Taboola";
 import { Moreseen } from "component/global/Moreseen/Moreseen";
+import { ItemSection } from "component/Page_Home/ItemSection";
 
 export const Section = (props) => {
     const {
@@ -22,8 +23,6 @@ export const Section = (props) => {
         mainMenu,
         topicsMenu,
         spotlight_general,
-        article,
-        portada,
     } = props;
     const limit = 24;
     const sectionArticles = section_data?.articles?.data.slice(0, limit) || [];
@@ -33,11 +32,10 @@ export const Section = (props) => {
     const [loading, setLoading] = useState(false);
     let titleSection = null;
     let dataSpotlight = null;
-    let dataGrid = null;
     let dataList;
     let interlinking = null;
     let isDataSubMnu = false;
-    const dataPortada = portada?.spotlight?.data?.item;
+    let dataSmallGrid = null;
     const section = section_about.category.slug.replace("/", "")
 
     const handler =() => {
@@ -95,7 +93,7 @@ export const Section = (props) => {
                 );
             }
         }
-        if (dataSection && Object.keys(dataSection) && Object.keys(dataSection).length > 0 && !dataPortada) {
+        if (dataSection && Object.keys(dataSection) && Object.keys(dataSection).length > 0 ) {
             const firstItem = dataSection.slice(0, 1)[0];
             const imageItem =
                 firstItem?.data?.multimedia?.find((media) => media.type === "image")?.path ||
@@ -106,22 +104,10 @@ export const Section = (props) => {
                 slug: firstItem?.slug,
                 title: firstItem?.title,
             };
-
-            dataGrid = dataSection.slice(1, 6);
-            dataList = dataSection.slice(6, dataSection.length);
+            dataSmallGrid = dataSection.slice(1, 3);
+            dataList = dataSection.slice(3, dataSection.length);
         }
 
-        if (dataSection && Object.keys(dataSection) && Object.keys(dataSection).length > 0 && dataPortada && dataPortada?.length > 0) {
-            const newData = [...dataPortada, ...dataSection];
-            const firstItem = newData.slice(0, 1)[0];
-            dataSpotlight = {
-                image: firstItem?.image?.url || process.env.IMAGE_DEFAULT_1250x735,
-                slug: firstItem?.url,
-                title: firstItem?.title,
-            };
-            dataGrid = newData.slice(1, 6);
-            dataList = newData.slice(6, newData.length);
-        }
     }
 
     return (
@@ -139,6 +125,15 @@ export const Section = (props) => {
             <div className="container__columns">
                 <article className="col__content">
                     <Spotlight data={dataSpotlight} />
+                    
+                </article>
+
+                <article className="col__content offset-300">
+                {dataSmallGrid.map((item,key)=><ItemSection data={item} key={key} type="subSpotlight" />) }
+                </article>
+            </div>
+            <div className="container__columns">
+                <article className="col__content">
                     <SlotAds type="Strip" data={adsPage?.ads?.data} />
                     <ListSection data={dataList} adsPage={adsPage} />
                     {dataSection?.length < 24 ? null : lastPage ? null : <ShowMoreButton loading={loading} onClick={handler} />}
@@ -146,7 +141,6 @@ export const Section = (props) => {
                 </article>
 
                 <article className="col__content offset-300">
-                    {/* <ListSmallSection data={dataGrid} /> */}
                     <SlotAds type="Middle" data={adsPage?.ads?.data} />
                     <Moreseen data={analyticsSeccion} />
                     <SlotAds type={"Middle2_Right"} data={adsPage?.ads?.data} />

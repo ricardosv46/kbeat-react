@@ -10,6 +10,7 @@ const SectionGridLastNews = ({data}) => {
         showItems = items.map((item, key) => {
 
                 return <ItemSection data={item} key={key} />
+                
         });
 
         showGrid =     <section className={style["grillaHome"]}>

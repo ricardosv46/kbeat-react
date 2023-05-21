@@ -252,3 +252,10 @@
     }
   }
 
+  .margin-video-container{
+    margin:0 -16px;
+
+    @media (min-width: 999px){
+        margin: 0;
+    }
+  }

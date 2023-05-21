@@ -3,14 +3,15 @@
 .grillaHome {
     margin-bottom: 10px;
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     flex-wrap: wrap;
     column-gap: 8px;
-    row-gap: 10px;
+    row-gap: 16px;
 
-    article:last-child {
-        display: none;
-      }
+    // article:last-child {
+    //     display: none;
+    //   }
     & picture {
         overflow: hidden;
         position: relative;
@@ -29,12 +30,12 @@
 
 @media (min-width: 769px) {
     .grillaHome {
-    flex:1;
 
-    grid-template-columns: 1fr 1fr 1fr;
-        article:last-child {
-            display: flex;
-          }
+    grid-template-columns: repeat(3,1fr);
+
+        // article:last-child {
+        //     display: flex;
+        //   }
     }
 }
 

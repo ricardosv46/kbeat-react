@@ -18,6 +18,7 @@ const MainMultimedia = ({
     }
     /* APLICO LAS PROPORCIONES A LOS TAMAÑOS BRINDADOS */
     let resizeData = {};
+    let imageLegend = null;
     Object.keys(size).forEach(function (key, index) {
         const height = Math.floor((size[key] * paddingDiv) / 100);
         resizeData[key] = { width: size[key], height };
@@ -28,6 +29,8 @@ const MainMultimedia = ({
         if (data.length == 1) {
             /* PUEDE SER VIDEO O IMAGEN */
             const currentMedia = data[0];
+             imageLegend = currentMedia?.data?.source || currentMedia?.data?.title;;
+
             if (currentMedia.type == "image") {
                 showMedia = <ImageMedia showCredits data={currentMedia} resize={resizeData} />;
             } else if (currentMedia.type == "video") {
@@ -38,20 +41,31 @@ const MainMultimedia = ({
             showMedia = <GalleryMedia data={data} resize={resizeData}/>;
         }
     }
-    return (
-        <div className="multimedia-container">
+
+
+    return (<>
+        <div className="multimedia-container margin-video-container">
             {showMedia}
+        </div>
+        <span className="span-legend">{imageLegend}</span>
             <style jsx>{`
-                .multimedia-container {
-                    background: #ddd;
-                    position: relative;
-                    margin:0 -16px;
-                    padding-top: ${paddingDiv}%;
-                    border-radius: 5px;
-                    overflow: hidden;
+            .multimedia-container {
+                background: #ddd;
+                position: relative;                    
+                padding-top: ${paddingDiv}%;
+                border-radius: 5px;
+                overflow: hidden;   
+                }
+
+                .span-legend {
+                    display:block;
+                    font-size: 10px;
+                    line-height: 12px;
+                    color:#333333;
+                    margin:10px 0 16px;
                 }
             `}</style>
-        </div>
+        </>
     );
 };
 

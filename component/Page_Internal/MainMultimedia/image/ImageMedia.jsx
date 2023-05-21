@@ -15,12 +15,11 @@ const ImageMedia = ({ data, resize, showCredits }) => {
                 <source media="(max-width:360px)" srcSet={newResize.resizeWapa(pathImage, resize.mobile.width, resize.mobile.height)} />
                 <img src={newResize.resizeWapa(pathImage, resize.desktop.width, resize.desktop.height)} alt={imageAlt} title={imageTitle} />
             </picture>
-            {showCredits && (
-                <div className="image-internal__legend">
+            {/* {showCredits && (
                     <span>{imageLegend}</span>
-                </div>
-            )}
+            )} */}
         </div>
+      
     );
 };
 

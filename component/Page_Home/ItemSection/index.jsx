@@ -7,7 +7,7 @@ const MULTIMEDIA_DEFAULT = {
     type: "image",
     path: process.env.IMAGE_DEFAULT_1250x735
 }
-const ItemSection = ({ data }) => {
+const ItemSection = ({ data,type='default' }) => {
     let resizeImage = {
         mobile: '164x95',
         tablet: '175x95',
@@ -30,25 +30,19 @@ const ItemSection = ({ data }) => {
 
     return (
 
-    <article className={`${styles["mediumCard__container"]}`}>
+    <article className={`${type==='subSpotlight'? styles["mediumCard__container__subSpotlight"] : styles["mediumCard__container"]} `}>
 
-        <figure className={`${styles["itemSection__image"]} ${isVideo ? styles["video-type"] : ""}`} >
+        <figure className={`${type==='subSpotlight'? styles["itemSection__image__subSpotlight"] : styles["itemSection__image"]} ${isVideo ? styles["video-type"] : ""}`} >
             <Image 
                 data={image} 
                 resize={resizeImage} 
                 title={categoryTitle || ''} 
             />
-            <div className={`${styles["degraded-image"]} extend-link-outside`}></div>              
+            <a href={slug} className={`${styles["degraded-image"]} `}></a>              
         </figure>
-      
-        {/* {categoryTitle && 
-            <h3 className={styles["itemSection__section"]}>
-                 <a  style={{color:'#F101CC'}} href={categorySlug}>{categoryTitle}</a>
-            </h3>
-        } */}
-        
+
         <h2 className={styles["itemSection__title"]}>
-            <a href={slug} className="extend-link">{sectionName}</a>
+            <a href={slug} className="">{sectionName}</a>
         </h2>
     </article>
     )

@@ -11,6 +11,7 @@ import { SchemaCronos } from "component/global/Schemas/SchemaCronos";
 import { Opta } from "component/global/Opta/Opta";
 import { Moreseen } from 'component/global/Moreseen/Moreseen';
 import { TitleSection } from 'component/global/TitleSection/TitleSection';
+import { TitleInterna } from 'component/Page_Internal/TitleInterna/TitleInterna';
 
 const Section = dynamic(import("pages/[section]/index"));
 
@@ -95,6 +96,7 @@ const Internal = (props) => {
             {data_schema_cronos}
             <Head>{isOpta && <Opta />}</Head>
             <TitleSection name={titleMostViewed} tag="span" href={slugSection} />
+            <TitleInterna title={article_internal?.article?.title} />
             <div className="container__columns">
                 <main className="col__content">
                     <article>
