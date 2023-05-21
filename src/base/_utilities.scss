@@ -39,6 +39,13 @@
 
 // TODO: revisar style body
 
+.flex-col{
+    flex-direction: column;
+}
+.gap-16{
+    gap: 16px;
+}
+
 .d-flex {
     display: flex;
 }

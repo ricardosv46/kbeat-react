@@ -128,7 +128,7 @@ export const Section = (props) => {
                     
                 </article>
 
-                <article className="col__content offset-300">
+                <article className="col__content offset-300 d-flex flex-col gap-16">
                 {dataSmallGrid.map((item,key)=><ItemSection data={item} key={key} type="subSpotlight" />) }
                 </article>
             </div>
